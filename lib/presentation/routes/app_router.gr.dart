@@ -21,6 +21,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const SplashPage());
     },
+    OnboardRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const OnboardPage());
+    },
     LoginRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const LoginPage());
@@ -49,9 +53,9 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HomePage());
     },
-    SearchRoute.name: (routeData) {
+    ParkingRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const SearchPage());
+          routeData: routeData, child: const ParkingPage());
     },
     HistoryRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -78,6 +82,7 @@ class _$AppRouter extends RootStackRouter {
   @override
   List<RouteConfig> get routes => [
         RouteConfig(SplashRoute.name, path: '/'),
+        RouteConfig(OnboardRoute.name, path: '/onboard-page'),
         RouteConfig(LoginRoute.name, path: '/login-page'),
         RouteConfig(RegisterRoute.name, path: '/register-page'),
         RouteConfig(RegisterSuccessRoute.name, path: '/register-success-page'),
@@ -85,7 +90,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(NotificationRoute.name, path: '/notification-page'),
         RouteConfig(AppLayoutRoute.name, path: '/app-layout-page'),
         RouteConfig(HomeRoute.name, path: '/home-page'),
-        RouteConfig(SearchRoute.name, path: '/search-page'),
+        RouteConfig(ParkingRoute.name, path: '/parking-page'),
         RouteConfig(HistoryRoute.name, path: '/history-page'),
         RouteConfig(HistoryDetailRoute.name, path: '/history-detail-page'),
         RouteConfig(LocationRoute.name, path: '/location-page'),
@@ -100,6 +105,14 @@ class SplashRoute extends PageRouteInfo<void> {
   const SplashRoute() : super(SplashRoute.name, path: '/');
 
   static const String name = 'SplashRoute';
+}
+
+/// generated route for
+/// [OnboardPage]
+class OnboardRoute extends PageRouteInfo<void> {
+  const OnboardRoute() : super(OnboardRoute.name, path: '/onboard-page');
+
+  static const String name = 'OnboardRoute';
 }
 
 /// generated route for
@@ -161,11 +174,11 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SearchPage]
-class SearchRoute extends PageRouteInfo<void> {
-  const SearchRoute() : super(SearchRoute.name, path: '/search-page');
+/// [ParkingPage]
+class ParkingRoute extends PageRouteInfo<void> {
+  const ParkingRoute() : super(ParkingRoute.name, path: '/parking-page');
 
-  static const String name = 'SearchRoute';
+  static const String name = 'ParkingRoute';
 }
 
 /// generated route for

@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
                       vertical: 8,
                     ),
                     leading: const CircleAvatar(
-                      backgroundColor: AppColor.orange,
+                      backgroundColor: AppColor.primary,
                       child: Text(
                         'A',
                         style: TextStyle(color: AppColor.white),

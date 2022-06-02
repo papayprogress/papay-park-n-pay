@@ -29,10 +29,10 @@ class HistoryPage extends StatelessWidget {
                   subtitle: Text(
                     "Menampilkan histori setiap kali parkir",
                     style:
-                        AppFont.subhead3.copyWith(color: AppColor.greyOrange),
+                        AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
                   ),
                   trailing: CircleAvatar(
-                    backgroundColor: AppColor.orange,
+                    backgroundColor: AppColor.primary,
                     child: IconButton(
                       color: AppColor.white,
                       onPressed: () {
@@ -54,7 +54,7 @@ class HistoryPage extends StatelessWidget {
                         context.router.push(const HistoryDetailRoute());
                       },
                       leading: const CircleAvatar(
-                        backgroundColor: AppColor.orange,
+                        backgroundColor: AppColor.primary,
                         child: Text(
                           'A',
                           style: TextStyle(color: AppColor.white),

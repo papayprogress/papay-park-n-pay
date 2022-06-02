@@ -27,16 +27,15 @@ class FirebaseAuthFacade implements IAuthFacade {
   );
 
   @override
-  Future<Either<AuthFailure, Unit>> registerWithEmailPassword(
-      {required EmailAddress emailAddress,
-      required Password password,
-      required Fullname fullname,
-      required Address address,
-      required Phone phone}) async {
+  Future<Either<AuthFailure, Unit>> registerWithEmailPassword({
+    required EmailAddress emailAddress,
+    required Password password,
+    required Fullname fullname,
+    required Phone phone,
+  }) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     final fullnameStr = fullname.getOrCrash();
-    final addressStr = address.getOrCrash();
     final phoneStr = phone.getOrCrash();
     try {
       await _firebaseAuth
@@ -49,7 +48,6 @@ class FirebaseAuthFacade implements IAuthFacade {
           id: emailAddressStr,
           email: emailAddressStr,
           name: fullnameStr,
-          address: addressStr,
           phone: phoneStr,
           photoURL: _.user?.photoURL,
         );
@@ -187,19 +185,16 @@ class FirebaseAuthFacade implements IAuthFacade {
     required Password? password,
     required PasswordConfirmation? passwordConfirmation,
     required Fullname fullname,
-    required Address address,
     required Phone phone,
   }) async {
     try {
       final emailAddressStr = emailAddress.getOrCrash();
       final fullnameStr = fullname.getOrCrash();
-      final addressStr = address.getOrCrash();
       final phoneStr = phone.getOrCrash();
 
       final appUser = AppUser(
         email: emailAddressStr,
         name: fullnameStr,
-        address: addressStr,
         phone: phoneStr,
       ).toJson();
 

@@ -11,8 +11,6 @@ class UserProfileFormEvent with _$UserProfileFormEvent {
       String passwordConfirmationStr) = _PasswordConfirmationChanged;
   const factory UserProfileFormEvent.phoneChanged(String phoneStr) =
       _PhoneChanged;
-  const factory UserProfileFormEvent.addressChanged(String addressStr) =
-      _AddressChanged;
   const factory UserProfileFormEvent.fullnameChanged(String fullnameStr) =
       _FullnameChanged;
   const factory UserProfileFormEvent.updateProfilePressed() =

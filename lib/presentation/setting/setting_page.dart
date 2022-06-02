@@ -31,10 +31,10 @@ class SettingPage extends StatelessWidget {
                   subtitle: Text(
                     "Ubah pengaturan aplikasimu",
                     style:
-                        AppFont.subhead3.copyWith(color: AppColor.greyOrange),
+                        AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
                   ),
                   trailing: CircleAvatar(
-                    backgroundColor: AppColor.orange,
+                    backgroundColor: AppColor.primary,
                     child: IconButton(
                       color: AppColor.white,
                       onPressed: () {
@@ -53,7 +53,7 @@ class SettingPage extends StatelessWidget {
                   contentPadding: const EdgeInsets.symmetric(vertical: 8),
                   leading: const Icon(
                     Icons.arrow_back,
-                    color: AppColor.orange,
+                    color: AppColor.primary,
                   ),
                   title: const Text("Kembali ke Menu Utama"),
                 ),
@@ -64,7 +64,7 @@ class SettingPage extends StatelessWidget {
                   contentPadding: const EdgeInsets.symmetric(vertical: 8),
                   leading: const Icon(
                     Icons.settings,
-                    color: AppColor.orange,
+                    color: AppColor.primary,
                   ),
                   title: const Text("Pengaturan Akun"),
                 ),
@@ -73,7 +73,7 @@ class SettingPage extends StatelessWidget {
                   contentPadding: const EdgeInsets.symmetric(vertical: 8),
                   leading: const Icon(
                     Icons.account_circle,
-                    color: AppColor.orange,
+                    color: AppColor.primary,
                   ),
                   title: const Text("Ketentuan Privasi Pengguna"),
                 ),

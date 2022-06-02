@@ -20,7 +20,6 @@ class ProfileFormWidget extends StatefulWidget {
 class _ProfileFormWidgetState extends State<ProfileFormWidget> {
   late TextEditingController fullnameController;
   late TextEditingController emailController;
-  late TextEditingController addressController;
   late TextEditingController phoneController;
   late TextEditingController passwordController;
   late TextEditingController passwordConfirmController;
@@ -32,7 +31,6 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
   void initState() {
     fullnameController = TextEditingController(text: widget.appUser.name);
     emailController = TextEditingController(text: widget.appUser.email);
-    addressController = TextEditingController(text: widget.appUser.address);
     phoneController = TextEditingController(text: widget.appUser.phone);
     passwordController = TextEditingController();
     passwordConfirmController = TextEditingController();
@@ -43,7 +41,6 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
   void dispose() {
     fullnameController.dispose();
     emailController.dispose();
-    addressController.dispose();
     phoneController.dispose();
     passwordController.dispose();
     passwordConfirmController.dispose();
@@ -107,10 +104,10 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
                 ),
                 subtitle: Text(
                   "Ubah pengaturan dari profilmu",
-                  style: AppFont.subhead3.copyWith(color: AppColor.greyOrange),
+                  style: AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
                 ),
                 trailing: CircleAvatar(
-                  backgroundColor: AppColor.orange,
+                  backgroundColor: AppColor.primary,
                   child: IconButton(
                     color: AppColor.white,
                     onPressed: () {
@@ -300,38 +297,6 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
                         (l) => l.maybeMap(
                           sameValue: (_) => 'Invalid Password',
                           shortPassword: (_) => 'Password must > 6 characters',
-                          orElse: () => null,
-                        ),
-                        (r) => null,
-                      );
-                },
-              ),
-              const SizedBox(height: 16),
-              const Text(
-                'Alamat',
-                style: AppFont.formLabel,
-              ),
-              const SizedBox(height: 8),
-              TextFormField(
-                controller: addressController,
-                decoration: const InputDecoration(
-                  hintText: 'Alamat',
-                ),
-                textInputAction: TextInputAction.next,
-                onChanged: (value) {
-                  context
-                      .read<UserProfileFormBloc>()
-                      .add(UserProfileFormEvent.addressChanged(value));
-                },
-                validator: (_) {
-                  return context
-                      .read<UserProfileFormBloc>()
-                      .state
-                      .address
-                      .value
-                      .fold(
-                        (l) => l.maybeMap(
-                          empty: (_) => 'Invalid Address',
                           orElse: () => null,
                         ),
                         (r) => null,

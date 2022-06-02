@@ -6,8 +6,6 @@ class RegisterFormEvent with _$RegisterFormEvent {
   const factory RegisterFormEvent.passwordChanged(String passwordStr) =
       _PasswordChanged;
   const factory RegisterFormEvent.phoneChanged(String phoneStr) = _PhoneChanged;
-  const factory RegisterFormEvent.addressChanged(String addressStr) =
-      _AddressChanged;
   const factory RegisterFormEvent.fullnameChanged(String fullnameStr) =
       _FullnameChanged;
   const factory RegisterFormEvent.registerWithEmailAndPasswordPressed() =

@@ -39,10 +39,10 @@ class HelloBlockWidget extends StatelessWidget {
               ),
               subtitle: Text(
                 "Selamat Pagi!",
-                style: AppFont.subhead3.copyWith(color: AppColor.greyOrange),
+                style: AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
               ),
               trailing: CircleAvatar(
-                backgroundColor: AppColor.orange,
+                backgroundColor: AppColor.primary,
                 child: IconButton(
                   color: AppColor.white,
                   onPressed: () {

@@ -21,7 +21,6 @@ mixin _$RegisterFormEvent {
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String phoneStr) phoneChanged,
-    required TResult Function(String addressStr) addressChanged,
     required TResult Function(String fullnameStr) fullnameChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) =>
@@ -31,7 +30,6 @@ mixin _$RegisterFormEvent {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
   }) =>
@@ -41,7 +39,6 @@ mixin _$RegisterFormEvent {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
@@ -52,7 +49,6 @@ mixin _$RegisterFormEvent {
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_AddressChanged value) addressChanged,
     required TResult Function(_FullnameChanged value) fullnameChanged,
     required TResult Function(_RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
@@ -63,7 +59,6 @@ mixin _$RegisterFormEvent {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -74,7 +69,6 @@ mixin _$RegisterFormEvent {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -168,7 +162,6 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String phoneStr) phoneChanged,
-    required TResult Function(String addressStr) addressChanged,
     required TResult Function(String fullnameStr) fullnameChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
@@ -181,7 +174,6 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
   }) {
@@ -194,7 +186,6 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
@@ -211,7 +202,6 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_AddressChanged value) addressChanged,
     required TResult Function(_FullnameChanged value) fullnameChanged,
     required TResult Function(_RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
@@ -225,7 +215,6 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -239,7 +228,6 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -330,7 +318,6 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String phoneStr) phoneChanged,
-    required TResult Function(String addressStr) addressChanged,
     required TResult Function(String fullnameStr) fullnameChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
@@ -343,7 +330,6 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
   }) {
@@ -356,7 +342,6 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
@@ -373,7 +358,6 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_AddressChanged value) addressChanged,
     required TResult Function(_FullnameChanged value) fullnameChanged,
     required TResult Function(_RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
@@ -387,7 +371,6 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -401,7 +384,6 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -491,7 +473,6 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String phoneStr) phoneChanged,
-    required TResult Function(String addressStr) addressChanged,
     required TResult Function(String fullnameStr) fullnameChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
@@ -504,7 +485,6 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
   }) {
@@ -517,7 +497,6 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
@@ -534,7 +513,6 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_AddressChanged value) addressChanged,
     required TResult Function(_FullnameChanged value) fullnameChanged,
     required TResult Function(_RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
@@ -548,7 +526,6 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -562,7 +539,6 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -581,168 +557,6 @@ abstract class _PhoneChanged implements RegisterFormEvent {
   String get phoneStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_PhoneChangedCopyWith<_$_PhoneChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_AddressChangedCopyWith<$Res> {
-  factory _$$_AddressChangedCopyWith(
-          _$_AddressChanged value, $Res Function(_$_AddressChanged) then) =
-      __$$_AddressChangedCopyWithImpl<$Res>;
-  $Res call({String addressStr});
-}
-
-/// @nodoc
-class __$$_AddressChangedCopyWithImpl<$Res>
-    extends _$RegisterFormEventCopyWithImpl<$Res>
-    implements _$$_AddressChangedCopyWith<$Res> {
-  __$$_AddressChangedCopyWithImpl(
-      _$_AddressChanged _value, $Res Function(_$_AddressChanged) _then)
-      : super(_value, (v) => _then(v as _$_AddressChanged));
-
-  @override
-  _$_AddressChanged get _value => super._value as _$_AddressChanged;
-
-  @override
-  $Res call({
-    Object? addressStr = freezed,
-  }) {
-    return _then(_$_AddressChanged(
-      addressStr == freezed
-          ? _value.addressStr
-          : addressStr // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_AddressChanged implements _AddressChanged {
-  const _$_AddressChanged(this.addressStr);
-
-  @override
-  final String addressStr;
-
-  @override
-  String toString() {
-    return 'RegisterFormEvent.addressChanged(addressStr: $addressStr)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_AddressChanged &&
-            const DeepCollectionEquality()
-                .equals(other.addressStr, addressStr));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(addressStr));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_AddressChangedCopyWith<_$_AddressChanged> get copyWith =>
-      __$$_AddressChangedCopyWithImpl<_$_AddressChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String phoneStr) phoneChanged,
-    required TResult Function(String addressStr) addressChanged,
-    required TResult Function(String fullnameStr) fullnameChanged,
-    required TResult Function() registerWithEmailAndPasswordPressed,
-  }) {
-    return addressChanged(addressStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
-    TResult Function(String fullnameStr)? fullnameChanged,
-    TResult Function()? registerWithEmailAndPasswordPressed,
-  }) {
-    return addressChanged?.call(addressStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
-    TResult Function(String fullnameStr)? fullnameChanged,
-    TResult Function()? registerWithEmailAndPasswordPressed,
-    required TResult orElse(),
-  }) {
-    if (addressChanged != null) {
-      return addressChanged(addressStr);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_AddressChanged value) addressChanged,
-    required TResult Function(_FullnameChanged value) fullnameChanged,
-    required TResult Function(_RegisterWithEmailAndPasswordPressed value)
-        registerWithEmailAndPasswordPressed,
-  }) {
-    return addressChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
-    TResult Function(_FullnameChanged value)? fullnameChanged,
-    TResult Function(_RegisterWithEmailAndPasswordPressed value)?
-        registerWithEmailAndPasswordPressed,
-  }) {
-    return addressChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
-    TResult Function(_FullnameChanged value)? fullnameChanged,
-    TResult Function(_RegisterWithEmailAndPasswordPressed value)?
-        registerWithEmailAndPasswordPressed,
-    required TResult orElse(),
-  }) {
-    if (addressChanged != null) {
-      return addressChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddressChanged implements RegisterFormEvent {
-  const factory _AddressChanged(final String addressStr) = _$_AddressChanged;
-
-  String get addressStr => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_AddressChangedCopyWith<_$_AddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -815,7 +629,6 @@ class _$_FullnameChanged implements _FullnameChanged {
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String phoneStr) phoneChanged,
-    required TResult Function(String addressStr) addressChanged,
     required TResult Function(String fullnameStr) fullnameChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
@@ -828,7 +641,6 @@ class _$_FullnameChanged implements _FullnameChanged {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
   }) {
@@ -841,7 +653,6 @@ class _$_FullnameChanged implements _FullnameChanged {
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
@@ -858,7 +669,6 @@ class _$_FullnameChanged implements _FullnameChanged {
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_AddressChanged value) addressChanged,
     required TResult Function(_FullnameChanged value) fullnameChanged,
     required TResult Function(_RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
@@ -872,7 +682,6 @@ class _$_FullnameChanged implements _FullnameChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -886,7 +695,6 @@ class _$_FullnameChanged implements _FullnameChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -958,7 +766,6 @@ class _$_RegisterWithEmailAndPasswordPressed
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String phoneStr) phoneChanged,
-    required TResult Function(String addressStr) addressChanged,
     required TResult Function(String fullnameStr) fullnameChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
@@ -971,7 +778,6 @@ class _$_RegisterWithEmailAndPasswordPressed
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
   }) {
@@ -984,7 +790,6 @@ class _$_RegisterWithEmailAndPasswordPressed
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String phoneStr)? phoneChanged,
-    TResult Function(String addressStr)? addressChanged,
     TResult Function(String fullnameStr)? fullnameChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
@@ -1001,7 +806,6 @@ class _$_RegisterWithEmailAndPasswordPressed
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_AddressChanged value) addressChanged,
     required TResult Function(_FullnameChanged value) fullnameChanged,
     required TResult Function(_RegisterWithEmailAndPasswordPressed value)
         registerWithEmailAndPasswordPressed,
@@ -1015,7 +819,6 @@ class _$_RegisterWithEmailAndPasswordPressed
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -1029,7 +832,6 @@ class _$_RegisterWithEmailAndPasswordPressed
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_AddressChanged value)? addressChanged,
     TResult Function(_FullnameChanged value)? fullnameChanged,
     TResult Function(_RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
@@ -1054,7 +856,6 @@ mixin _$RegisterFormState {
   Password get password => throw _privateConstructorUsedError;
   Fullname get fullname => throw _privateConstructorUsedError;
   Phone get phone => throw _privateConstructorUsedError;
-  Address get address => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
@@ -1075,7 +876,6 @@ abstract class $RegisterFormStateCopyWith<$Res> {
       Password password,
       Fullname fullname,
       Phone phone,
-      Address address,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
@@ -1096,7 +896,6 @@ class _$RegisterFormStateCopyWithImpl<$Res>
     Object? password = freezed,
     Object? fullname = freezed,
     Object? phone = freezed,
-    Object? address = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
@@ -1118,10 +917,6 @@ class _$RegisterFormStateCopyWithImpl<$Res>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as Phone,
-      address: address == freezed
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as Address,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1150,7 +945,6 @@ abstract class _$$_RegisterFormStateCopyWith<$Res>
       Password password,
       Fullname fullname,
       Phone phone,
-      Address address,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
@@ -1173,7 +967,6 @@ class __$$_RegisterFormStateCopyWithImpl<$Res>
     Object? password = freezed,
     Object? fullname = freezed,
     Object? phone = freezed,
-    Object? address = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
@@ -1195,10 +988,6 @@ class __$$_RegisterFormStateCopyWithImpl<$Res>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as Phone,
-      address: address == freezed
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as Address,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1223,7 +1012,6 @@ class _$_RegisterFormState implements _RegisterFormState {
       required this.password,
       required this.fullname,
       required this.phone,
-      required this.address,
       required this.showErrorMessages,
       required this.isSubmitting,
       required this.authFailureOrSuccessOption});
@@ -1237,8 +1025,6 @@ class _$_RegisterFormState implements _RegisterFormState {
   @override
   final Phone phone;
   @override
-  final Address address;
-  @override
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
@@ -1247,7 +1033,7 @@ class _$_RegisterFormState implements _RegisterFormState {
 
   @override
   String toString() {
-    return 'RegisterFormState(emailAddress: $emailAddress, password: $password, fullname: $fullname, phone: $phone, address: $address, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'RegisterFormState(emailAddress: $emailAddress, password: $password, fullname: $fullname, phone: $phone, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -1260,7 +1046,6 @@ class _$_RegisterFormState implements _RegisterFormState {
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other.fullname, fullname) &&
             const DeepCollectionEquality().equals(other.phone, phone) &&
-            const DeepCollectionEquality().equals(other.address, address) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality()
@@ -1276,7 +1061,6 @@ class _$_RegisterFormState implements _RegisterFormState {
       const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(fullname),
       const DeepCollectionEquality().hash(phone),
-      const DeepCollectionEquality().hash(address),
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(isSubmitting),
       const DeepCollectionEquality().hash(authFailureOrSuccessOption));
@@ -1294,7 +1078,6 @@ abstract class _RegisterFormState implements RegisterFormState {
       required final Password password,
       required final Fullname fullname,
       required final Phone phone,
-      required final Address address,
       required final bool showErrorMessages,
       required final bool isSubmitting,
       required final Option<Either<AuthFailure, Unit>>
@@ -1308,8 +1091,6 @@ abstract class _RegisterFormState implements RegisterFormState {
   Fullname get fullname => throw _privateConstructorUsedError;
   @override
   Phone get phone => throw _privateConstructorUsedError;
-  @override
-  Address get address => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override

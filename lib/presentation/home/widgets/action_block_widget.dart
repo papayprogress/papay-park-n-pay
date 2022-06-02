@@ -24,7 +24,7 @@ class ActionBlocWidget extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
-                    color: AppColor.lightOrange,
+                    color: AppColor.lightPrimary,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   child: const Icon(
@@ -49,7 +49,7 @@ class ActionBlocWidget extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
-                    color: AppColor.lightOrange,
+                    color: AppColor.lightPrimary,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   child: const FaIcon(
@@ -74,7 +74,7 @@ class ActionBlocWidget extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
-                    color: AppColor.lightOrange,
+                    color: AppColor.lightPrimary,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   child: const FaIcon(
@@ -98,7 +98,7 @@ class ActionBlocWidget extends StatelessWidget {
                 },
                 child: const Material(
                   clipBehavior: Clip.hardEdge,
-                  color: AppColor.lightOrange,
+                  color: AppColor.lightPrimary,
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   child: Padding(
                     padding: EdgeInsets.all(16),

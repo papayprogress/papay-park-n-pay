@@ -21,7 +21,7 @@ class HistoryDetailPage extends StatelessWidget {
               padding: const EdgeInsets.all(30),
               children: [
                 const Chip(
-                  backgroundColor: AppColor.orange,
+                  backgroundColor: AppColor.primary,
                   label: Text(
                     '#NP123JD',
                     style: TextStyle(color: AppColor.white),
@@ -36,7 +36,7 @@ class HistoryDetailPage extends StatelessWidget {
                 ),
                 Text(
                   '10 Mei 2022',
-                  style: AppFont.subhead2.copyWith(color: AppColor.greyOrange),
+                  style: AppFont.subhead2.copyWith(color: AppColor.greyPrimary),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 30),
@@ -92,7 +92,7 @@ class HistoryDetailPage extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: ' (Sudah dibayar)',
-                        style: TextStyle(color: AppColor.orange),
+                        style: TextStyle(color: AppColor.primary),
                       ),
                     ],
                   ),

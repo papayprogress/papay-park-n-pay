@@ -13,16 +13,17 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/auth/auth_bloc.dart' as _i15;
+import 'application/auth/auth_bloc.dart' as _i16;
 import 'application/auth/login_form/login_form_bloc.dart' as _i10;
-import 'application/auth/register_form/register_form_bloc.dart' as _i12;
-import 'application/auth/user_profile/user_profile_bloc.dart' as _i13;
-import 'application/auth/user_profile_form/user_profile_form_bloc.dart' as _i14;
-import 'application/notification/notification_bloc.dart' as _i11;
+import 'application/auth/register_form/register_form_bloc.dart' as _i13;
+import 'application/auth/user_profile/user_profile_bloc.dart' as _i14;
+import 'application/auth/user_profile_form/user_profile_form_bloc.dart' as _i15;
+import 'application/main_layout/main_layout_cubit.dart' as _i11;
+import 'application/notification/notification_bloc.dart' as _i12;
 import 'domain/auth/i_auth_facade.dart' as _i8;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i9;
 import 'infrastructure/core/firebase_injection_module.dart'
-    as _i16; // ignore_for_file: unnecessary_lambdas
+    as _i17; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -46,17 +47,18 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       get<_i4.FirebaseFirestore>()));
   gh.factory<_i10.LoginFormBloc>(
       () => _i10.LoginFormBloc(get<_i8.IAuthFacade>()));
-  gh.factory<_i11.NotificationBloc>(() => _i11.NotificationBloc(
+  gh.factory<_i11.MainLayoutCubit>(() => _i11.MainLayoutCubit());
+  gh.factory<_i12.NotificationBloc>(() => _i12.NotificationBloc(
       get<_i6.FlutterLocalNotificationsPlugin>(),
       get<_i5.FirebaseMessaging>()));
-  gh.factory<_i12.RegisterFormBloc>(
-      () => _i12.RegisterFormBloc(get<_i8.IAuthFacade>()));
-  gh.factory<_i13.UserProfileBloc>(
-      () => _i13.UserProfileBloc(get<_i8.IAuthFacade>()));
-  gh.factory<_i14.UserProfileFormBloc>(
-      () => _i14.UserProfileFormBloc(get<_i8.IAuthFacade>()));
-  gh.factory<_i15.AuthBloc>(() => _i15.AuthBloc(get<_i8.IAuthFacade>()));
+  gh.factory<_i13.RegisterFormBloc>(
+      () => _i13.RegisterFormBloc(get<_i8.IAuthFacade>()));
+  gh.factory<_i14.UserProfileBloc>(
+      () => _i14.UserProfileBloc(get<_i8.IAuthFacade>()));
+  gh.factory<_i15.UserProfileFormBloc>(
+      () => _i15.UserProfileFormBloc(get<_i8.IAuthFacade>()));
+  gh.factory<_i16.AuthBloc>(() => _i16.AuthBloc(get<_i8.IAuthFacade>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i16.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i17.FirebaseInjectableModule {}

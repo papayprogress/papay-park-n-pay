@@ -9,7 +9,6 @@ abstract class IAuthFacade {
     required EmailAddress emailAddress,
     required Password password,
     required Fullname fullname,
-    required Address address,
     required Phone phone,
   });
   Future<Either<AuthFailure, Unit>> signInWithEmailPassword({
@@ -22,7 +21,6 @@ abstract class IAuthFacade {
     required Password? password,
     required PasswordConfirmation? passwordConfirmation,
     required Fullname fullname,
-    required Address address,
     required Phone phone,
   });
   Future<void> signOut();

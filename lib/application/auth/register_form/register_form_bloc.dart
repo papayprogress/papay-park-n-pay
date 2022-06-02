@@ -35,12 +35,6 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
             authFailureOrSuccessOption: none(),
           ));
         },
-        addressChanged: (e) async {
-          emit(state.copyWith(
-            address: Address(e.addressStr),
-            authFailureOrSuccessOption: none(),
-          ));
-        },
         fullnameChanged: (e) async {
           emit(state.copyWith(
             fullname: Fullname(e.fullnameStr),
@@ -61,12 +55,9 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
                 await _authFacade.registerWithEmailPassword(
               emailAddress: state.emailAddress,
               password: state.password,
-              address: state.address,
               fullname: state.fullname,
               phone: state.phone,
             );
-
-            // await _authFacade.storeGoogleUser();
 
             emit(state.copyWith(
               isSubmitting: false,

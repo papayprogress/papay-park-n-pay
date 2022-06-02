@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:papay/application/auth/auth_bloc.dart';
+import 'package:papay/application/auth/login_form/login_form_bloc.dart';
 import 'package:papay/application/auth/register_form/register_form_bloc.dart';
 import 'package:papay/presentation/core/app_theme.dart';
 import 'package:papay/presentation/routes/app_router.dart';
@@ -62,13 +64,13 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                 padding: const EdgeInsets.all(30),
                 children: [
                   const Text(
-                    'Daftar',
+                    'Create an Account',
                     style: AppFont.headline3,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'Buat akun barumu disini',
+                    'Input data to make new account',
                     style: AppFont.subhead3,
                     textAlign: TextAlign.center,
                   ),
@@ -78,13 +80,13 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                   // ),
                   const SizedBox(height: 32),
                   const Text(
-                    'Nama Lengkap',
+                    'Full Name',
                     style: AppFont.formLabel,
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Masukkan Nama Lengkap',
+                      hintText: 'Enter your full name',
                     ),
                     textInputAction: TextInputAction.next,
                     onChanged: (value) {
@@ -109,13 +111,13 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    'No. HP',
+                    'Phone Number',
                     style: AppFont.formLabel,
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Masukkan No. HP',
+                      hintText: 'Enter your phone number',
                     ),
                     textInputAction: TextInputAction.next,
                     onChanged: (value) {
@@ -139,38 +141,7 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                     },
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    'Alamat',
-                    style: AppFont.formLabel,
-                  ),
-                  const SizedBox(height: 8),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      hintText: 'Masukkan Alamat',
-                    ),
-                    maxLines: null,
-                    textInputAction: TextInputAction.next,
-                    onChanged: (value) {
-                      context
-                          .read<RegisterFormBloc>()
-                          .add(RegisterFormEvent.addressChanged(value));
-                    },
-                    validator: (_) {
-                      return context
-                          .read<RegisterFormBloc>()
-                          .state
-                          .address
-                          .value
-                          .fold(
-                            (l) => l.maybeMap(
-                              shortPassword: (_) => 'Invalid Address',
-                              orElse: () => null,
-                            ),
-                            (r) => null,
-                          );
-                    },
-                  ),
-                  const SizedBox(height: 16),
+
                   const Text(
                     'Email',
                     style: AppFont.formLabel,
@@ -178,7 +149,7 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                   const SizedBox(height: 8),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Masukkan Email',
+                      hintText: 'Enter your email',
                     ),
                     textInputAction: TextInputAction.next,
                     onChanged: (value) {
@@ -203,14 +174,14 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    'Kata Sandi',
+                    'Password',
                     style: AppFont.formLabel,
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
                     obscureText: isObsecure,
                     decoration: InputDecoration(
-                      hintText: 'Masukkan Kata Sandi',
+                      hintText: 'Enter your password',
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
@@ -252,9 +223,32 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                             const RegisterFormEvent
                                 .registerWithEmailAndPasswordPressed());
                       },
-                      child: const Text('Daftar'),
+                      child: const Text('Register'),
                     ),
                   ),
+
+                  const SizedBox(height: 16),
+                  const Text(
+                    'or',
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 16),
+                  FractionallySizedBox(
+                    widthFactor: 1,
+                    child: OutlinedButton.icon(
+                      onPressed: () {
+                        context
+                            .read<LoginFormBloc>()
+                            .add(const LoginFormEvent.loginWithGooglePressed());
+                      },
+                      icon: const FaIcon(FontAwesomeIcons.google),
+                      label: const Text('Register with Google'),
+                    ),
+                  ),
+                  if (state.isSubmitting) ...[
+                    const SizedBox(height: 8),
+                    const LinearProgressIndicator(),
+                  ],
                   const SizedBox(height: 16),
                   FractionallySizedBox(
                     widthFactor: 1,
@@ -265,12 +259,12 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                       child: RichText(
                         text: const TextSpan(
                           text: 'Sudah memiliki akun?',
-                          style: TextStyle(color: AppColor.greyOrange),
+                          style: TextStyle(color: AppColor.greyPrimary),
                           children: [
                             TextSpan(
                               text: ' Masuk',
                               style: TextStyle(
-                                color: AppColor.orange,
+                                color: AppColor.primary,
                                 decoration: TextDecoration.underline,
                               ),
                             ),
@@ -279,10 +273,6 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                       ),
                     ),
                   ),
-                  if (state.isSubmitting) ...[
-                    const SizedBox(height: 8),
-                    const LinearProgressIndicator(),
-                  ],
                 ],
               ),
             ),

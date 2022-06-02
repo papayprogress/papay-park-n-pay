@@ -11,3 +11,15 @@ class MenuClass {
   final IconData icon;
   final Widget page;
 }
+
+class OnboardClass {
+  final String title;
+  final String description;
+  final String image;
+
+  OnboardClass({
+    required this.title,
+    required this.description,
+    required this.image,
+  });
+}

@@ -63,13 +63,13 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                 padding: const EdgeInsets.all(30),
                 children: [
                   const Text(
-                    'Masuk',
+                    'Hi, Welcome Back!',
                     style: AppFont.headline3,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'Mulai Pengalaman Reparasi Motor yang cepat dan efektif',
+                    'Let’s find your next parking place',
                     style: AppFont.subhead3,
                     textAlign: TextAlign.center,
                   ),
@@ -85,7 +85,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                   const SizedBox(height: 8),
                   TextFormField(
                     decoration: const InputDecoration(
-                      hintText: 'Masukkan Email atau Username',
+                      hintText: 'Enter your Email',
                     ),
                     autocorrect: false,
                     keyboardType: TextInputType.emailAddress,
@@ -112,14 +112,14 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    'Kata Sandi',
+                    'Password',
                     style: AppFont.formLabel,
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
                     obscureText: isObsecure,
                     decoration: InputDecoration(
-                      hintText: 'Masukkan Kata Sandi',
+                      hintText: 'Enter your Password',
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
@@ -160,8 +160,13 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                         context.read<LoginFormBloc>().add(const LoginFormEvent
                             .loginWithEmailAndPasswordPressed());
                       },
-                      child: const Text('Masuk'),
+                      child: const Text('Login'),
                     ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'or',
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
                   FractionallySizedBox(
@@ -173,7 +178,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                             .add(const LoginFormEvent.loginWithGooglePressed());
                       },
                       icon: const FaIcon(FontAwesomeIcons.google),
-                      label: const Text('Masuk dengan Google'),
+                      label: const Text('Login with Google'),
                     ),
                   ),
                   if (state.isSubmitting) ...[
@@ -187,7 +192,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                       onPressed: () {
                         context.router.push(const ForgotRoute());
                       },
-                      child: const Text('Lupa Kata Sandi'),
+                      child: const Text('Forgot Password?'),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -199,13 +204,13 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                       },
                       child: RichText(
                         text: const TextSpan(
-                          text: 'Belum memiliki akun?',
-                          style: TextStyle(color: AppColor.greyOrange),
+                          text: "Don't have an account?",
+                          style: TextStyle(color: AppColor.greyPrimary),
                           children: [
                             TextSpan(
-                              text: ' Daftar',
+                              text: ' Sign Up',
                               style: TextStyle(
-                                color: AppColor.orange,
+                                color: AppColor.primary,
                                 decoration: TextDecoration.underline,
                                 fontWeight: FontWeight.w400,
                               ),

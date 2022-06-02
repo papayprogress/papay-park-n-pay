@@ -11,7 +11,7 @@ import 'package:papay/presentation/core/app_theme.dart';
 import 'package:papay/presentation/history/history_page.dart';
 import 'package:papay/presentation/home/home_page.dart';
 import 'package:papay/presentation/routes/app_router.dart';
-import 'package:papay/presentation/search/search_page.dart';
+import 'package:papay/presentation/parking/parking_page.dart';
 
 final _children = [
   MenuClass(
@@ -20,9 +20,9 @@ final _children = [
     page: const HomePage(),
   ),
   MenuClass(
-    label: 'Reparasi',
-    icon: Icons.search,
-    page: const SearchPage(),
+    label: 'Park',
+    icon: Icons.car_repair,
+    page: const ParkingPage(),
   ),
   MenuClass(
     label: 'Histori',
@@ -30,7 +30,7 @@ final _children = [
     page: const HistoryPage(),
   ),
   MenuClass(
-    label: 'Tiket Aktif',
+    label: 'Profil',
     icon: Icons.account_circle,
     page: const ProfilePage(),
   ),
@@ -110,7 +110,7 @@ class AppLayoutPage extends StatelessWidget {
                           child: Icon(
                             _children[i].icon,
                             color: context.read<MainLayoutCubit>().isSelected(i)
-                                ? AppColor.orange
+                                ? AppColor.primary
                                 : AppColor.white,
                           ),
                         ),

@@ -5,16 +5,16 @@ class AppTheme {
   static ThemeData theme(BuildContext context) => ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
         backgroundColor: AppColor.background,
-        primaryColor: AppColor.orange,
-        primaryColorLight: AppColor.orange,
+        primaryColor: AppColor.primary,
+        primaryColorLight: AppColor.primary,
         colorScheme: const ColorScheme.light(
           background: AppColor.background,
-          primary: AppColor.orange,
+          primary: AppColor.primary,
         ),
         inputDecorationTheme: InputDecorationTheme(
           // filled: true,
           hintStyle: const TextStyle(
-            color: AppColor.greyOrange,
+            color: AppColor.greyPrimary,
             fontSize: 12,
           ),
           contentPadding: const EdgeInsets.symmetric(
@@ -41,7 +41,7 @@ class AppTheme {
               horizontal: 18,
               vertical: 14,
             ),
-            side: const BorderSide(color: AppColor.orange),
+            side: const BorderSide(color: AppColor.primary),
           ),
         ),
         textButtonTheme: TextButtonThemeData(
@@ -56,14 +56,14 @@ class AppTheme {
 }
 
 class AppColor {
-  static const orange = Color(0xFFFF9F02);
+  static const primary = Color(0xFFFF9F02);
   static const black = Color(0xFF434343);
   static const darkerBlack = Color(0xFF404040);
-  static const greyOrange = Color(0xFFD9D2C7);
+  static const greyPrimary = Color(0xFFD9D2C7);
   static const white = Color(0xFFFFFFFF);
-  static const softOrange = Color(0xFFFECC7A);
+  static const softPrimary = Color(0xFFFECC7A);
   static const lineStroke = Color(0xFFF3F1ED);
-  static const lightOrange = Color(0xFFFFEBCA);
+  static const lightPrimary = Color(0xFFFFEBCA);
   static const background = Color(0xFFFAFAFA);
 }
 
@@ -104,7 +104,7 @@ class AppFont {
     fontSize: 12,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.05,
-    color: AppColor.greyOrange,
+    color: AppColor.greyPrimary,
   );
 
   static const formLabel = TextStyle(

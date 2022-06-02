@@ -19,7 +19,7 @@ class CTABlockWidget extends StatelessWidget {
             right: -25,
             child: CircleAvatar(
               radius: 40,
-              backgroundColor: AppColor.greyOrange,
+              backgroundColor: AppColor.greyPrimary,
             ),
           ),
           const Positioned(
@@ -27,7 +27,7 @@ class CTABlockWidget extends StatelessWidget {
             left: -25,
             child: CircleAvatar(
               radius: 40,
-              backgroundColor: AppColor.greyOrange,
+              backgroundColor: AppColor.greyPrimary,
             ),
           ),
           Container(

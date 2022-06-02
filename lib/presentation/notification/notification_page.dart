@@ -12,11 +12,11 @@ class NotificationPage extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Positioned(
-              bottom: -100,
-              right: -60,
-              child: Image.asset('assets/other/gear.png'),
-            ),
+            // Positioned(
+            //   bottom: -100,
+            //   right: -60,
+            //   child: Image.asset('assets/other/gear.png'),
+            // ),
             ListView(
               padding: const EdgeInsets.all(30),
               children: [
@@ -34,7 +34,7 @@ class NotificationPage extends StatelessWidget {
                   subtitle: Text(
                     "Lihat Info Terbaru",
                     style:
-                        AppFont.subhead3.copyWith(color: AppColor.greyOrange),
+                        AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
                   ),
                 ),
                 const Divider(height: 16),
@@ -51,7 +51,7 @@ class NotificationPage extends StatelessWidget {
                     },
                     contentPadding: const EdgeInsets.symmetric(vertical: 16),
                     leading: const CircleAvatar(
-                      backgroundColor: AppColor.orange,
+                      backgroundColor: AppColor.primary,
                       child: Icon(
                         Icons.notification_important,
                         color: AppColor.white,
@@ -73,7 +73,7 @@ class NotificationPage extends StatelessWidget {
                     },
                     contentPadding: const EdgeInsets.symmetric(vertical: 16),
                     leading: const CircleAvatar(
-                      backgroundColor: AppColor.orange,
+                      backgroundColor: AppColor.primary,
                     ),
                     title: const Text(
                       'Servis di AHASS Cibiru',
@@ -94,7 +94,7 @@ class NotificationPage extends StatelessWidget {
                     },
                     contentPadding: const EdgeInsets.symmetric(vertical: 16),
                     leading: const CircleAvatar(
-                      backgroundColor: AppColor.orange,
+                      backgroundColor: AppColor.primary,
                     ),
                     title: const Text(
                       'Pembayaran Belum Selesai',
@@ -118,7 +118,7 @@ class NotificationPage extends StatelessWidget {
                     },
                     contentPadding: const EdgeInsets.symmetric(vertical: 16),
                     leading: const CircleAvatar(
-                      backgroundColor: AppColor.orange,
+                      backgroundColor: AppColor.primary,
                     ),
                     title: const Text(
                       'Pembayaran Selesai',

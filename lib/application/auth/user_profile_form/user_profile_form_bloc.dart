@@ -47,12 +47,6 @@ class UserProfileFormBloc
             authFailureOrSuccessOption: none(),
           ));
         },
-        addressChanged: (e) async {
-          emit(state.copyWith(
-            address: Address(e.addressStr),
-            authFailureOrSuccessOption: none(),
-          ));
-        },
         fullnameChanged: (e) async {
           emit(state.copyWith(
             fullname: Fullname(e.fullnameStr),
@@ -67,7 +61,6 @@ class UserProfileFormBloc
 
           final failureOrUpdate = await _authFacade.updateProfile(
             emailAddress: state.emailAddress,
-            address: state.address,
             fullname: state.fullname,
             phone: state.phone,
             password: state.password,

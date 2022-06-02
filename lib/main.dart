@@ -9,7 +9,10 @@ import 'package:papay/injection.dart';
 import 'package:papay/presentation/core/app_widget.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   configureInjection(Environment.prod);
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

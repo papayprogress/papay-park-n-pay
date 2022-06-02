@@ -25,7 +25,6 @@ mixin _$AppUser {
   String? get name => throw _privateConstructorUsedError;
   String? get photoURL => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,7 +41,6 @@ abstract class $AppUserCopyWith<$Res> {
       String? name,
       String? photoURL,
       String email,
-      String? address,
       String? phone});
 }
 
@@ -60,7 +58,6 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
     Object? name = freezed,
     Object? photoURL = freezed,
     Object? email = freezed,
-    Object? address = freezed,
     Object? phone = freezed,
   }) {
     return _then(_value.copyWith(
@@ -80,10 +77,6 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      address: address == freezed
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -103,7 +96,6 @@ abstract class _$$_AppUserCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       String? name,
       String? photoURL,
       String email,
-      String? address,
       String? phone});
 }
 
@@ -122,7 +114,6 @@ class __$$_AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
     Object? name = freezed,
     Object? photoURL = freezed,
     Object? email = freezed,
-    Object? address = freezed,
     Object? phone = freezed,
   }) {
     return _then(_$_AppUser(
@@ -142,10 +133,6 @@ class __$$_AppUserCopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      address: address == freezed
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -162,7 +149,6 @@ class _$_AppUser extends _AppUser {
       this.name,
       this.photoURL,
       required this.email,
-      this.address,
       this.phone})
       : super._();
 
@@ -179,13 +165,11 @@ class _$_AppUser extends _AppUser {
   @override
   final String email;
   @override
-  final String? address;
-  @override
   final String? phone;
 
   @override
   String toString() {
-    return 'AppUser(id: $id, name: $name, photoURL: $photoURL, email: $email, address: $address, phone: $phone)';
+    return 'AppUser(id: $id, name: $name, photoURL: $photoURL, email: $email, phone: $phone)';
   }
 
   @override
@@ -197,7 +181,6 @@ class _$_AppUser extends _AppUser {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.photoURL, photoURL) &&
             const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.address, address) &&
             const DeepCollectionEquality().equals(other.phone, phone));
   }
 
@@ -209,7 +192,6 @@ class _$_AppUser extends _AppUser {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(photoURL),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(address),
       const DeepCollectionEquality().hash(phone));
 
   @JsonKey(ignore: true)
@@ -229,7 +211,6 @@ abstract class _AppUser extends AppUser {
       final String? name,
       final String? photoURL,
       required final String email,
-      final String? address,
       final String? phone}) = _$_AppUser;
   const _AppUser._() : super._();
 
@@ -244,8 +225,6 @@ abstract class _AppUser extends AppUser {
   String? get photoURL => throw _privateConstructorUsedError;
   @override
   String get email => throw _privateConstructorUsedError;
-  @override
-  String? get address => throw _privateConstructorUsedError;
   @override
   String? get phone => throw _privateConstructorUsedError;
   @override

@@ -29,10 +29,10 @@ class LocationPage extends StatelessWidget {
                   subtitle: Text(
                     "Cari tempat parkir terdekat dari posisimu",
                     style:
-                        AppFont.subhead3.copyWith(color: AppColor.greyOrange),
+                        AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
                   ),
                   trailing: CircleAvatar(
-                    backgroundColor: AppColor.orange,
+                    backgroundColor: AppColor.primary,
                     child: IconButton(
                       color: AppColor.white,
                       onPressed: () {
@@ -66,7 +66,7 @@ class LocationPage extends StatelessWidget {
                           hintText: 'Jl. A.H. Nasution',
                           suffixIcon: Icon(
                             Icons.pin_drop,
-                            color: AppColor.orange,
+                            color: AppColor.primary,
                           ),
                         ),
                       ),
@@ -91,7 +91,7 @@ class LocationPage extends StatelessWidget {
                         ),
                         icon: const Icon(
                           Icons.arrow_drop_down,
-                          color: AppColor.orange,
+                          color: AppColor.primary,
                         ),
                         iconSize: 30,
                         buttonHeight: 50,

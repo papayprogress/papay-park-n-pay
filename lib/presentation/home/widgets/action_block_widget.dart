@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:papay/application/main_layout/main_layout_cubit.dart';
 import 'package:papay/presentation/core/app_theme.dart';
-import 'package:papay/presentation/routes/app_router.dart';
 
 class ActionBlocWidget extends StatelessWidget {
   const ActionBlocWidget({Key? key}) : super(key: key);
@@ -12,107 +11,124 @@ class ActionBlocWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
         children: [
-          Column(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              const Text('Find Parking Place'),
               InkWell(
                 onTap: () {
-                  context.read<MainLayoutCubit>().changePage(1);
+                  context.read<MainLayoutCubit>().changePage(3);
                 },
+                child: const Text('Lihat Semua'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
                     color: AppColor.lightPrimary,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
-                  child: const Icon(
-                    Icons.auto_fix_high,
-                    color: Colors.orange,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const FaIcon(
+                        FontAwesomeIcons.car,
+                        color: Colors.orange,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        'Car',
+                        style:
+                            AppFont.paragraph4.copyWith(color: AppColor.black),
+                      ),
+                      const SizedBox(height: 12),
+                      IconButton(
+                        onPressed: () {
+                          context.read<MainLayoutCubit>().changePage(1);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_circle_right_outlined,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              const SizedBox(height: 12),
-              Text(
-                'Reparasi',
-                style: AppFont.paragraph4.copyWith(color: AppColor.black),
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              InkWell(
-                onTap: () {
-                  context.read<MainLayoutCubit>().changePage(2);
-                },
+              const SizedBox(width: 16),
+              Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
                     color: AppColor.lightPrimary,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
-                  child: const FaIcon(
-                    FontAwesomeIcons.ticket,
-                    color: Colors.orange,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const FaIcon(
+                        FontAwesomeIcons.truck,
+                        color: Colors.orange,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        'Truck',
+                        style:
+                            AppFont.paragraph4.copyWith(color: AppColor.black),
+                      ),
+                      const SizedBox(height: 12),
+                      IconButton(
+                        onPressed: () {
+                          context.read<MainLayoutCubit>().changePage(2);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_circle_right_outlined,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              const SizedBox(height: 12),
-              Text(
-                'Tiket Aktif',
-                style: AppFont.paragraph4.copyWith(color: AppColor.black),
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              InkWell(
-                onTap: () {
-                  context.router.push(const LocationRoute());
-                },
+              const SizedBox(width: 16),
+              Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
                     color: AppColor.lightPrimary,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
-                  child: const FaIcon(
-                    FontAwesomeIcons.mapLocation,
-                    color: Colors.orange,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const FaIcon(
+                        FontAwesomeIcons.busSimple,
+                        color: Colors.orange,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        'Bus',
+                        style:
+                            AppFont.paragraph4.copyWith(color: AppColor.black),
+                      ),
+                      const SizedBox(height: 12),
+                      IconButton(
+                        onPressed: () {
+                          // context.router.push(const ParkingDetailRoute());
+                        },
+                        icon: const Icon(
+                          Icons.arrow_circle_right_outlined,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                'Cek Lokasi',
-                style: AppFont.paragraph4.copyWith(color: AppColor.black),
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              InkWell(
-                onTap: () {
-                  context.router.push(const SettingRoute());
-                },
-                child: const Material(
-                  clipBehavior: Clip.hardEdge,
-                  color: AppColor.lightPrimary,
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  child: Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Icon(
-                      Icons.settings,
-                      color: Colors.orange,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                'Pengaturan',
-                style: AppFont.paragraph4.copyWith(color: AppColor.black),
               ),
             ],
           ),

@@ -53,9 +53,15 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HomePage());
     },
-    ParkingRoute.name: (routeData) {
+    LocationRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const ParkingPage());
+          routeData: routeData, child: const LocationPage());
+    },
+    LocationDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<LocationDetailRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: LocationDetailPage(key: args.key, id: args.id));
     },
     HistoryRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -64,10 +70,6 @@ class _$AppRouter extends RootStackRouter {
     HistoryDetailRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HistoryDetailPage());
-    },
-    LocationRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const LocationPage());
     },
     PaymentRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -90,10 +92,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(NotificationRoute.name, path: '/notification-page'),
         RouteConfig(AppLayoutRoute.name, path: '/app-layout-page'),
         RouteConfig(HomeRoute.name, path: '/home-page'),
-        RouteConfig(ParkingRoute.name, path: '/parking-page'),
+        RouteConfig(LocationRoute.name, path: '/location-page'),
+        RouteConfig(LocationDetailRoute.name, path: '/location-detail-page'),
         RouteConfig(HistoryRoute.name, path: '/history-page'),
         RouteConfig(HistoryDetailRoute.name, path: '/history-detail-page'),
-        RouteConfig(LocationRoute.name, path: '/location-page'),
         RouteConfig(PaymentRoute.name, path: '/payment-page'),
         RouteConfig(SettingRoute.name, path: '/setting-page')
       ];
@@ -174,11 +176,35 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ParkingPage]
-class ParkingRoute extends PageRouteInfo<void> {
-  const ParkingRoute() : super(ParkingRoute.name, path: '/parking-page');
+/// [LocationPage]
+class LocationRoute extends PageRouteInfo<void> {
+  const LocationRoute() : super(LocationRoute.name, path: '/location-page');
 
-  static const String name = 'ParkingRoute';
+  static const String name = 'LocationRoute';
+}
+
+/// generated route for
+/// [LocationDetailPage]
+class LocationDetailRoute extends PageRouteInfo<LocationDetailRouteArgs> {
+  LocationDetailRoute({Key? key, required int id})
+      : super(LocationDetailRoute.name,
+            path: '/location-detail-page',
+            args: LocationDetailRouteArgs(key: key, id: id));
+
+  static const String name = 'LocationDetailRoute';
+}
+
+class LocationDetailRouteArgs {
+  const LocationDetailRouteArgs({this.key, required this.id});
+
+  final Key? key;
+
+  final int id;
+
+  @override
+  String toString() {
+    return 'LocationDetailRouteArgs{key: $key, id: $id}';
+  }
 }
 
 /// generated route for
@@ -196,14 +222,6 @@ class HistoryDetailRoute extends PageRouteInfo<void> {
       : super(HistoryDetailRoute.name, path: '/history-detail-page');
 
   static const String name = 'HistoryDetailRoute';
-}
-
-/// generated route for
-/// [LocationPage]
-class LocationRoute extends PageRouteInfo<void> {
-  const LocationRoute() : super(LocationRoute.name, path: '/location-page');
-
-  static const String name = 'LocationRoute';
 }
 
 /// generated route for

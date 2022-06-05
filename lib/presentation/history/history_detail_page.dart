@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:papay/presentation/core/app_theme.dart';
 import 'package:papay/presentation/routes/app_router.dart';
 
@@ -20,26 +21,29 @@ class HistoryDetailPage extends StatelessWidget {
             ListView(
               padding: const EdgeInsets.all(30),
               children: [
-                const Chip(
-                  backgroundColor: AppColor.primary,
-                  label: Text(
-                    '#NP123JD',
-                    style: TextStyle(color: AppColor.white),
-                    textAlign: TextAlign.center,
-                  ),
+                const Text(
+                  '#18239172389',
+                  style: TextStyle(color: AppColor.lightPrimary),
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'AHASS Soekarno Hatta',
-                  style: AppFont.headline1,
-                  textAlign: TextAlign.center,
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text(
+                    "Parkiran Akhdan",
+                    style: AppFont.headline2,
+                  ),
+                  subtitle: Text(
+                    "Spot A3, 10 Maret 2022",
+                    style:
+                        AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
+                  ),
+                  trailing: const FaIcon(
+                    FontAwesomeIcons.car,
+                    size: 48,
+                  ),
                 ),
-                Text(
-                  '10 Mei 2022',
-                  style: AppFont.subhead2.copyWith(color: AppColor.greyPrimary),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 30),
+                const Divider(),
+                const SizedBox(height: 16),
                 const Center(
                   child: SizedBox(
                     width: 200,
@@ -47,57 +51,138 @@ class HistoryDetailPage extends StatelessWidget {
                     child: Placeholder(),
                   ),
                 ),
-                const SizedBox(height: 30),
-                const Text(
-                  'Catatan',
-                  style: AppFont.subhead2,
-                  textAlign: TextAlign.left,
+                const SizedBox(height: 32),
+                FractionallySizedBox(
+                  widthFactor: 1 / 2,
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: const Text('Unduh Tiket'),
+                  ),
                 ),
-                const SizedBox(height: 8),
-                const Text(
-                  'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
-                  textAlign: TextAlign.justify,
+                const SizedBox(height: 32),
+                Text(
+                  'Note: the QR code work as proof of booking to the parking lot owner if an error occurs',
+                  style: AppFont.subhead3.copyWith(
+                    color: AppColor.greyPrimary,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Detail Reparasi',
-                  style: AppFont.subhead2,
-                  textAlign: TextAlign.left,
-                ),
-                const SizedBox(height: 8),
-                for (int i = 0; i < 3; i++)
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Row(
+                const SizedBox(height: 32),
+                Table(
+                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                  columnWidths: const {
+                    0: FlexColumnWidth(3),
+                    1: FlexColumnWidth(1),
+                    2: FlexColumnWidth(5),
+                  },
+                  children: const [
+                    TableRow(
                       children: [
-                        const Text('-'),
-                        const SizedBox(width: 4),
-                        Expanded(
-                          child: Text('Benerin ini sejumlah $i'),
+                        TableCell(
+                          child: Text('Booking ID'),
+                        ),
+                        TableCell(
+                          child: Text(':'),
+                        ),
+                        TableCell(
+                          child: Text('#PAKH2613'),
                         ),
                       ],
                     ),
-                  ),
-                const SizedBox(height: 16),
+                    TableRow(children: [
+                      SizedBox(height: 16),
+                      SizedBox(height: 16),
+                      SizedBox(height: 16),
+                    ]),
+                    TableRow(
+                      children: [
+                        TableCell(
+                          child: Text('Place'),
+                        ),
+                        TableCell(
+                          child: Text(':'),
+                        ),
+                        TableCell(
+                          child: Text('Parkiran Akhdan'),
+                        ),
+                      ],
+                    ),
+                    TableRow(children: [
+                      SizedBox(height: 16),
+                      SizedBox(height: 16),
+                      SizedBox(height: 16),
+                    ]),
+                    TableRow(
+                      children: [
+                        TableCell(
+                          child: Text('Spot'),
+                        ),
+                        TableCell(
+                          child: Text(':'),
+                        ),
+                        TableCell(
+                          child: Text('A3'),
+                        ),
+                      ],
+                    ),
+                    TableRow(
+                      children: [
+                        SizedBox(height: 16),
+                        SizedBox(height: 16),
+                        SizedBox(height: 16),
+                      ],
+                    ),
+                    TableRow(
+                      children: [
+                        TableCell(
+                          child: Text('Day and Date'),
+                        ),
+                        TableCell(
+                          child: Text(':'),
+                        ),
+                        TableCell(
+                          child: Text('Sunday, 10 June 2022'),
+                        ),
+                      ],
+                    ),
+                    TableRow(
+                      children: [
+                        SizedBox(height: 16),
+                        SizedBox(height: 16),
+                        SizedBox(height: 16),
+                      ],
+                    ),
+                    TableRow(
+                      children: [
+                        TableCell(
+                          child: Text('Hours'),
+                        ),
+                        TableCell(
+                          child: Text(':'),
+                        ),
+                        TableCell(
+                          child: Text('3 Hours'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 32),
                 const Text(
-                  'Total Pembayaran',
-                  style: AppFont.subhead2,
-                  textAlign: TextAlign.left,
+                  'Total COs:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
-                RichText(
-                  text: const TextSpan(
-                    text: 'Rp. 280.000',
-                    style: TextStyle(color: AppColor.black),
-                    children: [
-                      TextSpan(
-                        text: ' (Sudah dibayar)',
-                        style: TextStyle(color: AppColor.primary),
-                      ),
-                    ],
-                  ),
+                const Text(
+                  'Rp. 240.000',
+                  style: TextStyle(color: Colors.red),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 8),
+                const Text(
+                  '(Sudah Dibayar ✔)',
+                  style: TextStyle(color: Colors.green),
+                ),
+                const SizedBox(height: 32),
                 FractionallySizedBox(
                   widthFactor: 1,
                   child: ElevatedButton(

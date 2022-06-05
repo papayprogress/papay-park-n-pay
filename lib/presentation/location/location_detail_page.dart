@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:papay/presentation/core/app_theme.dart';
+import 'package:papay/presentation/location/widgets/location_banner_widget.dart';
 import 'package:papay/presentation/location/widgets/parking_space_widget.dart';
 import 'package:papay/presentation/routes/app_router.dart';
 
@@ -11,6 +12,7 @@ class LocationDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AutoRouter.of(context);
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -36,38 +38,7 @@ class LocationDetailPage extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(30),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 3,
-              color: AppColor.black,
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.arrow_circle_left_outlined,
-                        size: 48,
-                        color: AppColor.white,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.arrow_circle_right_outlined,
-                        size: 48,
-                        color: AppColor.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const LocationBannerWidget(),
             Container(
               padding: const EdgeInsets.all(30),
               color: AppColor.darkerBlack,
@@ -143,7 +114,9 @@ class LocationDetailPage extends StatelessWidget {
               child: FractionallySizedBox(
                 widthFactor: 1,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.router.popAndPush(LocationPaymentRoute(id: id));
+                  },
                   child: const Text("Choose Selected"),
                 ),
               ),

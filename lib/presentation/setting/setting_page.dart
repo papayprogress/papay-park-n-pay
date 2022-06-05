@@ -58,17 +58,6 @@ class SettingPage extends StatelessWidget {
                   title: const Text("Kembali ke Menu Utama"),
                 ),
                 ListTile(
-                  onTap: () {
-                    context.router.push(const AppLayoutRoute());
-                  },
-                  contentPadding: const EdgeInsets.symmetric(vertical: 8),
-                  leading: const Icon(
-                    Icons.settings,
-                    color: AppColor.primary,
-                  ),
-                  title: const Text("Pengaturan Akun"),
-                ),
-                ListTile(
                   onTap: () {},
                   contentPadding: const EdgeInsets.symmetric(vertical: 8),
                   leading: const Icon(

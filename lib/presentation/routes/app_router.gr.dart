@@ -63,6 +63,16 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData,
           child: LocationDetailPage(key: args.key, id: args.id));
     },
+    LocationPaymentRoute.name: (routeData) {
+      final args = routeData.argsAs<LocationPaymentRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: LocationPaymentPage(key: args.key, id: args.id));
+    },
+    InvoiceSuccessRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const InvoiceSuccessPage());
+    },
     HistoryRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HistoryPage());
@@ -94,6 +104,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(HomeRoute.name, path: '/home-page'),
         RouteConfig(LocationRoute.name, path: '/location-page'),
         RouteConfig(LocationDetailRoute.name, path: '/location-detail-page'),
+        RouteConfig(LocationPaymentRoute.name, path: '/location-payment-page'),
+        RouteConfig(InvoiceSuccessRoute.name, path: '/invoice-success-page'),
         RouteConfig(HistoryRoute.name, path: '/history-page'),
         RouteConfig(HistoryDetailRoute.name, path: '/history-detail-page'),
         RouteConfig(PaymentRoute.name, path: '/payment-page'),
@@ -205,6 +217,39 @@ class LocationDetailRouteArgs {
   String toString() {
     return 'LocationDetailRouteArgs{key: $key, id: $id}';
   }
+}
+
+/// generated route for
+/// [LocationPaymentPage]
+class LocationPaymentRoute extends PageRouteInfo<LocationPaymentRouteArgs> {
+  LocationPaymentRoute({Key? key, required int id})
+      : super(LocationPaymentRoute.name,
+            path: '/location-payment-page',
+            args: LocationPaymentRouteArgs(key: key, id: id));
+
+  static const String name = 'LocationPaymentRoute';
+}
+
+class LocationPaymentRouteArgs {
+  const LocationPaymentRouteArgs({this.key, required this.id});
+
+  final Key? key;
+
+  final int id;
+
+  @override
+  String toString() {
+    return 'LocationPaymentRouteArgs{key: $key, id: $id}';
+  }
+}
+
+/// generated route for
+/// [InvoiceSuccessPage]
+class InvoiceSuccessRoute extends PageRouteInfo<void> {
+  const InvoiceSuccessRoute()
+      : super(InvoiceSuccessRoute.name, path: '/invoice-success-page');
+
+  static const String name = 'InvoiceSuccessRoute';
 }
 
 /// generated route for

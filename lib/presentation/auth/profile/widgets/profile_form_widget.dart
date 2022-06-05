@@ -324,9 +324,9 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
                 widthFactor: 1,
                 child: OutlinedButton(
                   onPressed: () {
-                    context.router.pop();
+                    context.router.push(const SettingRoute());
                   },
-                  child: const Text('Kembali ke Menu Utama'),
+                  child: const Text('Pengaturan'),
                 ),
               ),
             ],

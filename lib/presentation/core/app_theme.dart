@@ -56,14 +56,14 @@ class AppTheme {
 }
 
 class AppColor {
-  static const primary = Color(0xFFFF9F02);
-  static const black = Color(0xFF434343);
+  static const primary = Color(0xFF79A3B1);
+  static const black = Color(0xFF3A5055);
   static const darkerBlack = Color(0xFF404040);
-  static const greyPrimary = Color(0xFFD9D2C7);
+  static const greyPrimary = Color(0xFFD0E8F2);
   static const white = Color(0xFFFFFFFF);
   static const softPrimary = Color(0xFFFECC7A);
   static const lineStroke = Color(0xFFF3F1ED);
-  static const lightPrimary = Color(0xFFFFEBCA);
+  static const lightPrimary = Color(0xFFD0E8F2);
   static const background = Color(0xFFFAFAFA);
 }
 

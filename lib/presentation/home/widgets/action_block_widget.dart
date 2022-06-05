@@ -41,7 +41,7 @@ class ActionBlocWidget extends StatelessWidget {
                     children: [
                       const FaIcon(
                         FontAwesomeIcons.car,
-                        color: Colors.orange,
+                        color: AppColor.primary,
                       ),
                       const SizedBox(height: 12),
                       Text(
@@ -50,13 +50,8 @@ class ActionBlocWidget extends StatelessWidget {
                             AppFont.paragraph4.copyWith(color: AppColor.black),
                       ),
                       const SizedBox(height: 12),
-                      IconButton(
-                        onPressed: () {
-                          context.read<MainLayoutCubit>().changePage(1);
-                        },
-                        icon: const Icon(
-                          Icons.arrow_circle_right_outlined,
-                        ),
+                      const Icon(
+                        Icons.arrow_circle_right_outlined,
                       ),
                     ],
                   ),
@@ -75,7 +70,7 @@ class ActionBlocWidget extends StatelessWidget {
                     children: [
                       const FaIcon(
                         FontAwesomeIcons.truck,
-                        color: Colors.orange,
+                        color: AppColor.primary,
                       ),
                       const SizedBox(height: 12),
                       Text(
@@ -84,13 +79,8 @@ class ActionBlocWidget extends StatelessWidget {
                             AppFont.paragraph4.copyWith(color: AppColor.black),
                       ),
                       const SizedBox(height: 12),
-                      IconButton(
-                        onPressed: () {
-                          context.read<MainLayoutCubit>().changePage(2);
-                        },
-                        icon: const Icon(
-                          Icons.arrow_circle_right_outlined,
-                        ),
+                      const Icon(
+                        Icons.arrow_circle_right_outlined,
                       ),
                     ],
                   ),
@@ -109,7 +99,7 @@ class ActionBlocWidget extends StatelessWidget {
                     children: [
                       const FaIcon(
                         FontAwesomeIcons.busSimple,
-                        color: Colors.orange,
+                        color: AppColor.primary,
                       ),
                       const SizedBox(height: 12),
                       Text(
@@ -118,13 +108,8 @@ class ActionBlocWidget extends StatelessWidget {
                             AppFont.paragraph4.copyWith(color: AppColor.black),
                       ),
                       const SizedBox(height: 12),
-                      IconButton(
-                        onPressed: () {
-                          // context.router.push(const ParkingDetailRoute());
-                        },
-                        icon: const Icon(
-                          Icons.arrow_circle_right_outlined,
-                        ),
+                      const Icon(
+                        Icons.arrow_circle_right_outlined,
                       ),
                     ],
                   ),

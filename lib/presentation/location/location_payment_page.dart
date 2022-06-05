@@ -205,11 +205,19 @@ class LocationPaymentStatePage extends State<LocationPaymentPage> {
               widthFactor: 1,
               child: ElevatedButton(
                 onPressed: () {
-                  // context.router.pushAndPopUntil(const InvoiceSuccessRoute(),
-                  //     predicate: (route) => route == LocationDetailRoute.name);
                   context.router.replace(const InvoiceSuccessRoute());
                 },
                 child: const Text("Book For Rp. 6500"),
+              ),
+            ),
+            const SizedBox(height: 30),
+            FractionallySizedBox(
+              widthFactor: 1,
+              child: OutlinedButton(
+                onPressed: () {
+                  context.router.pop();
+                },
+                child: const Text("Kembali ke Menu Utama"),
               ),
             ),
           ],

@@ -17,13 +17,7 @@ class _LocationMapWidgetState extends State<LocationMapWidget> {
     super.initState();
     mapController = MapController(
       initMapWithUserPosition: false,
-      initPosition: GeoPoint(latitude: 47.4358055, longitude: 8.4737324),
-      areaLimit: BoundingBox(
-        east: 10.4922941,
-        north: 47.8084648,
-        south: 45.817995,
-        west: 5.9559113,
-      ),
+      initPosition: GeoPoint(latitude: -6.905977, longitude: 107.613144),
     );
   }
 
@@ -40,7 +34,7 @@ class _LocationMapWidgetState extends State<LocationMapWidget> {
         OSMFlutter(
           controller: mapController,
           trackMyPosition: false,
-          initZoom: 12,
+          initZoom: 15,
           minZoomLevel: 8,
           maxZoomLevel: 1.0,
           userLocationMarker: UserLocationMaker(
@@ -106,11 +100,15 @@ class _LocationMapWidgetState extends State<LocationMapWidget> {
               label: Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      await mapController.zoomOut();
+                    },
                     icon: const Icon(Icons.minimize),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      await mapController.zoomIn();
+                    },
                     icon: const Icon(Icons.add),
                   ),
                 ],

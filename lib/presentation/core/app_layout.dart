@@ -10,8 +10,8 @@ import 'package:papay/presentation/auth/profile/profile_page.dart';
 import 'package:papay/presentation/core/app_theme.dart';
 import 'package:papay/presentation/history/history_page.dart';
 import 'package:papay/presentation/home/home_page.dart';
+import 'package:papay/presentation/order/location/location_page.dart';
 import 'package:papay/presentation/routes/app_router.dart';
-import 'package:papay/presentation/location/location_page.dart';
 
 final _children = [
   MenuClass(

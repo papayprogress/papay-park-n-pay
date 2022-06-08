@@ -8,13 +8,13 @@ import 'package:papay/presentation/core/app_layout.dart';
 import 'package:papay/presentation/history/history_detail_page.dart';
 import 'package:papay/presentation/history/history_page.dart';
 import 'package:papay/presentation/home/home_page.dart';
-import 'package:papay/presentation/invoice/invoice_success_page.dart';
-import 'package:papay/presentation/location/location_payment_page.dart';
 import 'package:papay/presentation/notification/notification_page.dart';
 import 'package:papay/presentation/onboard/onboard_page.dart';
-import 'package:papay/presentation/payment/payment_page.dart';
-import 'package:papay/presentation/location/location_page.dart';
-import 'package:papay/presentation/location/location_detail_page.dart';
+import 'package:papay/presentation/order/invoice/invoice_success_page.dart';
+import 'package:papay/presentation/order/location/location_page.dart';
+import 'package:papay/presentation/order/location_detail/location_detail_page.dart';
+import 'package:papay/presentation/order/order_wrapper_page.dart';
+import 'package:papay/presentation/order/payment/payment_page.dart';
 import 'package:papay/presentation/setting/setting_page.dart';
 import 'package:papay/presentation/splash/splash_page.dart';
 
@@ -35,12 +35,16 @@ part 'app_router.gr.dart';
     AutoRoute(page: AppLayoutPage),
     AutoRoute(page: HomePage),
     AutoRoute(page: LocationPage),
-    AutoRoute(page: LocationDetailPage),
-    AutoRoute(page: LocationPaymentPage),
-    AutoRoute(page: InvoiceSuccessPage),
+    AutoRoute(
+      page: OrderWrapperPage,
+      children: [
+        AutoRoute(page: LocationDetailPage),
+        AutoRoute(page: PaymentPage),
+        AutoRoute(page: InvoiceSuccessPage),
+      ],
+    ),
     AutoRoute(page: HistoryPage),
     AutoRoute(page: HistoryDetailPage),
-    AutoRoute(page: PaymentPage),
     AutoRoute(page: SettingPage),
   ],
 )

@@ -57,21 +57,11 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const LocationPage());
     },
-    LocationDetailRoute.name: (routeData) {
-      final args = routeData.argsAs<LocationDetailRouteArgs>();
+    OrderWrapperRoute.name: (routeData) {
+      final args = routeData.argsAs<OrderWrapperRouteArgs>();
       return MaterialPageX<dynamic>(
           routeData: routeData,
-          child: LocationDetailPage(key: args.key, id: args.id));
-    },
-    LocationPaymentRoute.name: (routeData) {
-      final args = routeData.argsAs<LocationPaymentRouteArgs>();
-      return MaterialPageX<dynamic>(
-          routeData: routeData,
-          child: LocationPaymentPage(key: args.key, id: args.id));
-    },
-    InvoiceSuccessRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const InvoiceSuccessPage());
+          child: OrderWrapperPage(key: args.key, idLocation: args.idLocation));
     },
     HistoryRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -81,13 +71,21 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HistoryDetailPage());
     },
+    SettingRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const SettingPage());
+    },
+    LocationDetailRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const LocationDetailPage());
+    },
     PaymentRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const PaymentPage());
     },
-    SettingRoute.name: (routeData) {
+    InvoiceSuccessRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const SettingPage());
+          routeData: routeData, child: const InvoiceSuccessPage());
     }
   };
 
@@ -103,12 +101,18 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(AppLayoutRoute.name, path: '/app-layout-page'),
         RouteConfig(HomeRoute.name, path: '/home-page'),
         RouteConfig(LocationRoute.name, path: '/location-page'),
-        RouteConfig(LocationDetailRoute.name, path: '/location-detail-page'),
-        RouteConfig(LocationPaymentRoute.name, path: '/location-payment-page'),
-        RouteConfig(InvoiceSuccessRoute.name, path: '/invoice-success-page'),
+        RouteConfig(OrderWrapperRoute.name,
+            path: '/order-wrapper-page',
+            children: [
+              RouteConfig(LocationDetailRoute.name,
+                  path: 'location-detail-page', parent: OrderWrapperRoute.name),
+              RouteConfig(PaymentRoute.name,
+                  path: 'payment-page', parent: OrderWrapperRoute.name),
+              RouteConfig(InvoiceSuccessRoute.name,
+                  path: 'invoice-success-page', parent: OrderWrapperRoute.name)
+            ]),
         RouteConfig(HistoryRoute.name, path: '/history-page'),
         RouteConfig(HistoryDetailRoute.name, path: '/history-detail-page'),
-        RouteConfig(PaymentRoute.name, path: '/payment-page'),
         RouteConfig(SettingRoute.name, path: '/setting-page')
       ];
 }
@@ -196,60 +200,29 @@ class LocationRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [LocationDetailPage]
-class LocationDetailRoute extends PageRouteInfo<LocationDetailRouteArgs> {
-  LocationDetailRoute({Key? key, required int id})
-      : super(LocationDetailRoute.name,
-            path: '/location-detail-page',
-            args: LocationDetailRouteArgs(key: key, id: id));
+/// [OrderWrapperPage]
+class OrderWrapperRoute extends PageRouteInfo<OrderWrapperRouteArgs> {
+  OrderWrapperRoute(
+      {Key? key, required int idLocation, List<PageRouteInfo>? children})
+      : super(OrderWrapperRoute.name,
+            path: '/order-wrapper-page',
+            args: OrderWrapperRouteArgs(key: key, idLocation: idLocation),
+            initialChildren: children);
 
-  static const String name = 'LocationDetailRoute';
+  static const String name = 'OrderWrapperRoute';
 }
 
-class LocationDetailRouteArgs {
-  const LocationDetailRouteArgs({this.key, required this.id});
+class OrderWrapperRouteArgs {
+  const OrderWrapperRouteArgs({this.key, required this.idLocation});
 
   final Key? key;
 
-  final int id;
+  final int idLocation;
 
   @override
   String toString() {
-    return 'LocationDetailRouteArgs{key: $key, id: $id}';
+    return 'OrderWrapperRouteArgs{key: $key, idLocation: $idLocation}';
   }
-}
-
-/// generated route for
-/// [LocationPaymentPage]
-class LocationPaymentRoute extends PageRouteInfo<LocationPaymentRouteArgs> {
-  LocationPaymentRoute({Key? key, required int id})
-      : super(LocationPaymentRoute.name,
-            path: '/location-payment-page',
-            args: LocationPaymentRouteArgs(key: key, id: id));
-
-  static const String name = 'LocationPaymentRoute';
-}
-
-class LocationPaymentRouteArgs {
-  const LocationPaymentRouteArgs({this.key, required this.id});
-
-  final Key? key;
-
-  final int id;
-
-  @override
-  String toString() {
-    return 'LocationPaymentRouteArgs{key: $key, id: $id}';
-  }
-}
-
-/// generated route for
-/// [InvoiceSuccessPage]
-class InvoiceSuccessRoute extends PageRouteInfo<void> {
-  const InvoiceSuccessRoute()
-      : super(InvoiceSuccessRoute.name, path: '/invoice-success-page');
-
-  static const String name = 'InvoiceSuccessRoute';
 }
 
 /// generated route for
@@ -270,17 +243,35 @@ class HistoryDetailRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [PaymentPage]
-class PaymentRoute extends PageRouteInfo<void> {
-  const PaymentRoute() : super(PaymentRoute.name, path: '/payment-page');
-
-  static const String name = 'PaymentRoute';
-}
-
-/// generated route for
 /// [SettingPage]
 class SettingRoute extends PageRouteInfo<void> {
   const SettingRoute() : super(SettingRoute.name, path: '/setting-page');
 
   static const String name = 'SettingRoute';
+}
+
+/// generated route for
+/// [LocationDetailPage]
+class LocationDetailRoute extends PageRouteInfo<void> {
+  const LocationDetailRoute()
+      : super(LocationDetailRoute.name, path: 'location-detail-page');
+
+  static const String name = 'LocationDetailRoute';
+}
+
+/// generated route for
+/// [PaymentPage]
+class PaymentRoute extends PageRouteInfo<void> {
+  const PaymentRoute() : super(PaymentRoute.name, path: 'payment-page');
+
+  static const String name = 'PaymentRoute';
+}
+
+/// generated route for
+/// [InvoiceSuccessPage]
+class InvoiceSuccessRoute extends PageRouteInfo<void> {
+  const InvoiceSuccessRoute()
+      : super(InvoiceSuccessRoute.name, path: 'invoice-success-page');
+
+  static const String name = 'InvoiceSuccessRoute';
 }

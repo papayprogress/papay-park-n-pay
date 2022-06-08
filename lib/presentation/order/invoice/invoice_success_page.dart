@@ -66,7 +66,9 @@ class InvoiceSuccessPage extends StatelessWidget {
                   FractionallySizedBox(
                     widthFactor: 1,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.router.replace(const HistoryDetailRoute());
+                      },
                       child: const Text('View Booking Detail'),
                     ),
                   ),

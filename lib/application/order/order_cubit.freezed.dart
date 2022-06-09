@@ -17,8 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$OrderState {
   Status get status => throw _privateConstructorUsedError;
-  int get idLocation => throw _privateConstructorUsedError;
-  int get selectedSpot => throw _privateConstructorUsedError;
+  Location? get location => throw _privateConstructorUsedError;
+  ParkingPoint? get selectedSpot => throw _privateConstructorUsedError;
   int get selectedTime => throw _privateConstructorUsedError;
   String? get referralCode => throw _privateConstructorUsedError;
   int get selectedPayment => throw _privateConstructorUsedError;
@@ -35,11 +35,13 @@ abstract class $OrderStateCopyWith<$Res> {
       _$OrderStateCopyWithImpl<$Res>;
   $Res call(
       {Status status,
-      int idLocation,
-      int selectedSpot,
+      Location? location,
+      ParkingPoint? selectedSpot,
       int selectedTime,
       String? referralCode,
       int selectedPayment});
+
+  $LocationCopyWith<$Res>? get location;
 }
 
 /// @nodoc
@@ -53,7 +55,7 @@ class _$OrderStateCopyWithImpl<$Res> implements $OrderStateCopyWith<$Res> {
   @override
   $Res call({
     Object? status = freezed,
-    Object? idLocation = freezed,
+    Object? location = freezed,
     Object? selectedSpot = freezed,
     Object? selectedTime = freezed,
     Object? referralCode = freezed,
@@ -64,14 +66,14 @@ class _$OrderStateCopyWithImpl<$Res> implements $OrderStateCopyWith<$Res> {
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
-      idLocation: idLocation == freezed
-          ? _value.idLocation
-          : idLocation // ignore: cast_nullable_to_non_nullable
-              as int,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as Location?,
       selectedSpot: selectedSpot == freezed
           ? _value.selectedSpot
           : selectedSpot // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ParkingPoint?,
       selectedTime: selectedTime == freezed
           ? _value.selectedTime
           : selectedTime // ignore: cast_nullable_to_non_nullable
@@ -86,6 +88,17 @@ class _$OrderStateCopyWithImpl<$Res> implements $OrderStateCopyWith<$Res> {
               as int,
     ));
   }
+
+  @override
+  $LocationCopyWith<$Res>? get location {
+    if (_value.location == null) {
+      return null;
+    }
+
+    return $LocationCopyWith<$Res>(_value.location!, (value) {
+      return _then(_value.copyWith(location: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -97,11 +110,14 @@ abstract class _$$_OrderStateCopyWith<$Res>
   @override
   $Res call(
       {Status status,
-      int idLocation,
-      int selectedSpot,
+      Location? location,
+      ParkingPoint? selectedSpot,
       int selectedTime,
       String? referralCode,
       int selectedPayment});
+
+  @override
+  $LocationCopyWith<$Res>? get location;
 }
 
 /// @nodoc
@@ -117,7 +133,7 @@ class __$$_OrderStateCopyWithImpl<$Res> extends _$OrderStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = freezed,
-    Object? idLocation = freezed,
+    Object? location = freezed,
     Object? selectedSpot = freezed,
     Object? selectedTime = freezed,
     Object? referralCode = freezed,
@@ -128,14 +144,14 @@ class __$$_OrderStateCopyWithImpl<$Res> extends _$OrderStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
-      idLocation: idLocation == freezed
-          ? _value.idLocation
-          : idLocation // ignore: cast_nullable_to_non_nullable
-              as int,
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as Location?,
       selectedSpot: selectedSpot == freezed
           ? _value.selectedSpot
           : selectedSpot // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ParkingPoint?,
       selectedTime: selectedTime == freezed
           ? _value.selectedTime
           : selectedTime // ignore: cast_nullable_to_non_nullable
@@ -157,8 +173,8 @@ class __$$_OrderStateCopyWithImpl<$Res> extends _$OrderStateCopyWithImpl<$Res>
 class _$_OrderState extends _OrderState {
   const _$_OrderState(
       {required this.status,
-      required this.idLocation,
-      required this.selectedSpot,
+      this.location,
+      this.selectedSpot,
       required this.selectedTime,
       this.referralCode,
       required this.selectedPayment})
@@ -167,9 +183,9 @@ class _$_OrderState extends _OrderState {
   @override
   final Status status;
   @override
-  final int idLocation;
+  final Location? location;
   @override
-  final int selectedSpot;
+  final ParkingPoint? selectedSpot;
   @override
   final int selectedTime;
   @override
@@ -179,7 +195,7 @@ class _$_OrderState extends _OrderState {
 
   @override
   String toString() {
-    return 'OrderState(status: $status, idLocation: $idLocation, selectedSpot: $selectedSpot, selectedTime: $selectedTime, referralCode: $referralCode, selectedPayment: $selectedPayment)';
+    return 'OrderState(status: $status, location: $location, selectedSpot: $selectedSpot, selectedTime: $selectedTime, referralCode: $referralCode, selectedPayment: $selectedPayment)';
   }
 
   @override
@@ -188,8 +204,7 @@ class _$_OrderState extends _OrderState {
         (other.runtimeType == runtimeType &&
             other is _$_OrderState &&
             const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.idLocation, idLocation) &&
+            const DeepCollectionEquality().equals(other.location, location) &&
             const DeepCollectionEquality()
                 .equals(other.selectedSpot, selectedSpot) &&
             const DeepCollectionEquality()
@@ -204,7 +219,7 @@ class _$_OrderState extends _OrderState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(idLocation),
+      const DeepCollectionEquality().hash(location),
       const DeepCollectionEquality().hash(selectedSpot),
       const DeepCollectionEquality().hash(selectedTime),
       const DeepCollectionEquality().hash(referralCode),
@@ -219,8 +234,8 @@ class _$_OrderState extends _OrderState {
 abstract class _OrderState extends OrderState {
   const factory _OrderState(
       {required final Status status,
-      required final int idLocation,
-      required final int selectedSpot,
+      final Location? location,
+      final ParkingPoint? selectedSpot,
       required final int selectedTime,
       final String? referralCode,
       required final int selectedPayment}) = _$_OrderState;
@@ -229,9 +244,9 @@ abstract class _OrderState extends OrderState {
   @override
   Status get status => throw _privateConstructorUsedError;
   @override
-  int get idLocation => throw _privateConstructorUsedError;
+  Location? get location => throw _privateConstructorUsedError;
   @override
-  int get selectedSpot => throw _privateConstructorUsedError;
+  ParkingPoint? get selectedSpot => throw _privateConstructorUsedError;
   @override
   int get selectedTime => throw _privateConstructorUsedError;
   @override

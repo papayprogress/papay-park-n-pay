@@ -4,6 +4,6 @@ part of 'location_watcher_bloc.dart';
 class LocationWatcherEvent with _$LocationWatcherEvent {
   const factory LocationWatcherEvent.watchAllStarted() = _WatchAllStarted;
   const factory LocationWatcherEvent.locationReceived(
-          Either<LocationFailure, List<Location>> failureOrNotes) =
+          Either<LocationFailure, List<Location>> failureOrLocation) =
       _LocationReceived;
 }

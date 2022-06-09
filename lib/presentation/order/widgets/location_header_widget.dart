@@ -16,17 +16,17 @@ class LocationHeaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     AutoRouter.of(context);
     return BlocBuilder<OrderCubit, OrderState>(
-      buildWhen: (p, c) => p.idLocation != c.idLocation,
+      buildWhen: (p, c) => p.location != c.location,
       builder: (context, state) {
         return ListTile(
           contentPadding:
               hasPadding ? const EdgeInsets.all(32) : EdgeInsets.zero,
           title: Text(
-            "Parkiran ${state.idLocation}",
+            "Parkiran ${state.location!.name}",
             style: AppFont.headline2,
           ),
           subtitle: Text(
-            "Alamat jl. 1234 abcd ",
+            state.location!.address,
             style: AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
           ),
           trailing: CircleAvatar(

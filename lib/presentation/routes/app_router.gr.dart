@@ -61,7 +61,7 @@ class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<OrderWrapperRouteArgs>();
       return MaterialPageX<dynamic>(
           routeData: routeData,
-          child: OrderWrapperPage(key: args.key, idLocation: args.idLocation));
+          child: OrderWrapperPage(key: args.key, location: args.location));
     },
     HistoryRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -203,25 +203,25 @@ class LocationRoute extends PageRouteInfo<void> {
 /// [OrderWrapperPage]
 class OrderWrapperRoute extends PageRouteInfo<OrderWrapperRouteArgs> {
   OrderWrapperRoute(
-      {Key? key, required int idLocation, List<PageRouteInfo>? children})
+      {Key? key, required Location location, List<PageRouteInfo>? children})
       : super(OrderWrapperRoute.name,
             path: '/order-wrapper-page',
-            args: OrderWrapperRouteArgs(key: key, idLocation: idLocation),
+            args: OrderWrapperRouteArgs(key: key, location: location),
             initialChildren: children);
 
   static const String name = 'OrderWrapperRoute';
 }
 
 class OrderWrapperRouteArgs {
-  const OrderWrapperRouteArgs({this.key, required this.idLocation});
+  const OrderWrapperRouteArgs({this.key, required this.location});
 
   final Key? key;
 
-  final int idLocation;
+  final Location location;
 
   @override
   String toString() {
-    return 'OrderWrapperRouteArgs{key: $key, idLocation: $idLocation}';
+    return 'OrderWrapperRouteArgs{key: $key, location: $location}';
   }
 }
 

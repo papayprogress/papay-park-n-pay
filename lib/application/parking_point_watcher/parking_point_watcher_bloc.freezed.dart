@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'location_watcher_bloc.dart';
+part of 'parking_point_watcher_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,66 +15,71 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$LocationWatcherEvent {
+mixin _$ParkingPointWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function(String id) watchAllStarted,
     required TResult Function(
-            Either<LocationFailure, List<Location>> failureOrLocation)
-        locationReceived,
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)
+        parkingPointReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function(Either<LocationFailure, List<Location>> failureOrLocation)?
-        locationReceived,
+    TResult Function(String id)? watchAllStarted,
+    TResult Function(
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)?
+        parkingPointReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function(Either<LocationFailure, List<Location>> failureOrLocation)?
-        locationReceived,
+    TResult Function(String id)? watchAllStarted,
+    TResult Function(
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)?
+        parkingPointReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(_LocationReceived value) locationReceived,
+    required TResult Function(_ParkingPointReceived value) parkingPointReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult Function(_ParkingPointReceived value)? parkingPointReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult Function(_ParkingPointReceived value)? parkingPointReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LocationWatcherEventCopyWith<$Res> {
-  factory $LocationWatcherEventCopyWith(LocationWatcherEvent value,
-          $Res Function(LocationWatcherEvent) then) =
-      _$LocationWatcherEventCopyWithImpl<$Res>;
+abstract class $ParkingPointWatcherEventCopyWith<$Res> {
+  factory $ParkingPointWatcherEventCopyWith(ParkingPointWatcherEvent value,
+          $Res Function(ParkingPointWatcherEvent) then) =
+      _$ParkingPointWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LocationWatcherEventCopyWithImpl<$Res>
-    implements $LocationWatcherEventCopyWith<$Res> {
-  _$LocationWatcherEventCopyWithImpl(this._value, this._then);
+class _$ParkingPointWatcherEventCopyWithImpl<$Res>
+    implements $ParkingPointWatcherEventCopyWith<$Res> {
+  _$ParkingPointWatcherEventCopyWithImpl(this._value, this._then);
 
-  final LocationWatcherEvent _value;
+  final ParkingPointWatcherEvent _value;
   // ignore: unused_field
-  final $Res Function(LocationWatcherEvent) _then;
+  final $Res Function(ParkingPointWatcherEvent) _then;
 }
 
 /// @nodoc
@@ -82,11 +87,12 @@ abstract class _$$_WatchAllStartedCopyWith<$Res> {
   factory _$$_WatchAllStartedCopyWith(
           _$_WatchAllStarted value, $Res Function(_$_WatchAllStarted) then) =
       __$$_WatchAllStartedCopyWithImpl<$Res>;
+  $Res call({String id});
 }
 
 /// @nodoc
 class __$$_WatchAllStartedCopyWithImpl<$Res>
-    extends _$LocationWatcherEventCopyWithImpl<$Res>
+    extends _$ParkingPointWatcherEventCopyWithImpl<$Res>
     implements _$$_WatchAllStartedCopyWith<$Res> {
   __$$_WatchAllStartedCopyWithImpl(
       _$_WatchAllStarted _value, $Res Function(_$_WatchAllStarted) _then)
@@ -94,58 +100,86 @@ class __$$_WatchAllStartedCopyWithImpl<$Res>
 
   @override
   _$_WatchAllStarted get _value => super._value as _$_WatchAllStarted;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_$_WatchAllStarted(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_WatchAllStarted implements _WatchAllStarted {
-  const _$_WatchAllStarted();
+  const _$_WatchAllStarted(this.id);
+
+  @override
+  final String id;
 
   @override
   String toString() {
-    return 'LocationWatcherEvent.watchAllStarted()';
+    return 'ParkingPointWatcherEvent.watchAllStarted(id: $id)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_WatchAllStarted);
+        (other.runtimeType == runtimeType &&
+            other is _$_WatchAllStarted &&
+            const DeepCollectionEquality().equals(other.id, id));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_WatchAllStartedCopyWith<_$_WatchAllStarted> get copyWith =>
+      __$$_WatchAllStartedCopyWithImpl<_$_WatchAllStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function(String id) watchAllStarted,
     required TResult Function(
-            Either<LocationFailure, List<Location>> failureOrLocation)
-        locationReceived,
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)
+        parkingPointReceived,
   }) {
-    return watchAllStarted();
+    return watchAllStarted(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function(Either<LocationFailure, List<Location>> failureOrLocation)?
-        locationReceived,
+    TResult Function(String id)? watchAllStarted,
+    TResult Function(
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)?
+        parkingPointReceived,
   }) {
-    return watchAllStarted?.call();
+    return watchAllStarted?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function(Either<LocationFailure, List<Location>> failureOrLocation)?
-        locationReceived,
+    TResult Function(String id)? watchAllStarted,
+    TResult Function(
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)?
+        parkingPointReceived,
     required TResult orElse(),
   }) {
     if (watchAllStarted != null) {
-      return watchAllStarted();
+      return watchAllStarted(id);
     }
     return orElse();
   }
@@ -154,7 +188,7 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(_LocationReceived value) locationReceived,
+    required TResult Function(_ParkingPointReceived value) parkingPointReceived,
   }) {
     return watchAllStarted(this);
   }
@@ -163,7 +197,7 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult Function(_ParkingPointReceived value)? parkingPointReceived,
   }) {
     return watchAllStarted?.call(this);
   }
@@ -172,7 +206,7 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult Function(_ParkingPointReceived value)? parkingPointReceived,
     required TResult orElse(),
   }) {
     if (watchAllStarted != null) {
@@ -182,104 +216,116 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   }
 }
 
-abstract class _WatchAllStarted implements LocationWatcherEvent {
-  const factory _WatchAllStarted() = _$_WatchAllStarted;
+abstract class _WatchAllStarted implements ParkingPointWatcherEvent {
+  const factory _WatchAllStarted(final String id) = _$_WatchAllStarted;
+
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_WatchAllStartedCopyWith<_$_WatchAllStarted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_LocationReceivedCopyWith<$Res> {
-  factory _$$_LocationReceivedCopyWith(
-          _$_LocationReceived value, $Res Function(_$_LocationReceived) then) =
-      __$$_LocationReceivedCopyWithImpl<$Res>;
-  $Res call({Either<LocationFailure, List<Location>> failureOrLocation});
+abstract class _$$_ParkingPointReceivedCopyWith<$Res> {
+  factory _$$_ParkingPointReceivedCopyWith(_$_ParkingPointReceived value,
+          $Res Function(_$_ParkingPointReceived) then) =
+      __$$_ParkingPointReceivedCopyWithImpl<$Res>;
+  $Res call(
+      {Either<ParkingPointFailure, List<ParkingPoint>> failureOrParkingPoint});
 }
 
 /// @nodoc
-class __$$_LocationReceivedCopyWithImpl<$Res>
-    extends _$LocationWatcherEventCopyWithImpl<$Res>
-    implements _$$_LocationReceivedCopyWith<$Res> {
-  __$$_LocationReceivedCopyWithImpl(
-      _$_LocationReceived _value, $Res Function(_$_LocationReceived) _then)
-      : super(_value, (v) => _then(v as _$_LocationReceived));
+class __$$_ParkingPointReceivedCopyWithImpl<$Res>
+    extends _$ParkingPointWatcherEventCopyWithImpl<$Res>
+    implements _$$_ParkingPointReceivedCopyWith<$Res> {
+  __$$_ParkingPointReceivedCopyWithImpl(_$_ParkingPointReceived _value,
+      $Res Function(_$_ParkingPointReceived) _then)
+      : super(_value, (v) => _then(v as _$_ParkingPointReceived));
 
   @override
-  _$_LocationReceived get _value => super._value as _$_LocationReceived;
+  _$_ParkingPointReceived get _value => super._value as _$_ParkingPointReceived;
 
   @override
   $Res call({
-    Object? failureOrLocation = freezed,
+    Object? failureOrParkingPoint = freezed,
   }) {
-    return _then(_$_LocationReceived(
-      failureOrLocation == freezed
-          ? _value.failureOrLocation
-          : failureOrLocation // ignore: cast_nullable_to_non_nullable
-              as Either<LocationFailure, List<Location>>,
+    return _then(_$_ParkingPointReceived(
+      failureOrParkingPoint == freezed
+          ? _value.failureOrParkingPoint
+          : failureOrParkingPoint // ignore: cast_nullable_to_non_nullable
+              as Either<ParkingPointFailure, List<ParkingPoint>>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_LocationReceived implements _LocationReceived {
-  const _$_LocationReceived(this.failureOrLocation);
+class _$_ParkingPointReceived implements _ParkingPointReceived {
+  const _$_ParkingPointReceived(this.failureOrParkingPoint);
 
   @override
-  final Either<LocationFailure, List<Location>> failureOrLocation;
+  final Either<ParkingPointFailure, List<ParkingPoint>> failureOrParkingPoint;
 
   @override
   String toString() {
-    return 'LocationWatcherEvent.locationReceived(failureOrLocation: $failureOrLocation)';
+    return 'ParkingPointWatcherEvent.parkingPointReceived(failureOrParkingPoint: $failureOrParkingPoint)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LocationReceived &&
+            other is _$_ParkingPointReceived &&
             const DeepCollectionEquality()
-                .equals(other.failureOrLocation, failureOrLocation));
+                .equals(other.failureOrParkingPoint, failureOrParkingPoint));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failureOrLocation));
+      runtimeType, const DeepCollectionEquality().hash(failureOrParkingPoint));
 
   @JsonKey(ignore: true)
   @override
-  _$$_LocationReceivedCopyWith<_$_LocationReceived> get copyWith =>
-      __$$_LocationReceivedCopyWithImpl<_$_LocationReceived>(this, _$identity);
+  _$$_ParkingPointReceivedCopyWith<_$_ParkingPointReceived> get copyWith =>
+      __$$_ParkingPointReceivedCopyWithImpl<_$_ParkingPointReceived>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function(String id) watchAllStarted,
     required TResult Function(
-            Either<LocationFailure, List<Location>> failureOrLocation)
-        locationReceived,
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)
+        parkingPointReceived,
   }) {
-    return locationReceived(failureOrLocation);
+    return parkingPointReceived(failureOrParkingPoint);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function(Either<LocationFailure, List<Location>> failureOrLocation)?
-        locationReceived,
+    TResult Function(String id)? watchAllStarted,
+    TResult Function(
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)?
+        parkingPointReceived,
   }) {
-    return locationReceived?.call(failureOrLocation);
+    return parkingPointReceived?.call(failureOrParkingPoint);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function(Either<LocationFailure, List<Location>> failureOrLocation)?
-        locationReceived,
+    TResult Function(String id)? watchAllStarted,
+    TResult Function(
+            Either<ParkingPointFailure, List<ParkingPoint>>
+                failureOrParkingPoint)?
+        parkingPointReceived,
     required TResult orElse(),
   }) {
-    if (locationReceived != null) {
-      return locationReceived(failureOrLocation);
+    if (parkingPointReceived != null) {
+      return parkingPointReceived(failureOrParkingPoint);
     }
     return orElse();
   }
@@ -288,70 +334,71 @@ class _$_LocationReceived implements _LocationReceived {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(_LocationReceived value) locationReceived,
+    required TResult Function(_ParkingPointReceived value) parkingPointReceived,
   }) {
-    return locationReceived(this);
+    return parkingPointReceived(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult Function(_ParkingPointReceived value)? parkingPointReceived,
   }) {
-    return locationReceived?.call(this);
+    return parkingPointReceived?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_LocationReceived value)? locationReceived,
+    TResult Function(_ParkingPointReceived value)? parkingPointReceived,
     required TResult orElse(),
   }) {
-    if (locationReceived != null) {
-      return locationReceived(this);
+    if (parkingPointReceived != null) {
+      return parkingPointReceived(this);
     }
     return orElse();
   }
 }
 
-abstract class _LocationReceived implements LocationWatcherEvent {
-  const factory _LocationReceived(
-          final Either<LocationFailure, List<Location>> failureOrLocation) =
-      _$_LocationReceived;
+abstract class _ParkingPointReceived implements ParkingPointWatcherEvent {
+  const factory _ParkingPointReceived(
+      final Either<ParkingPointFailure, List<ParkingPoint>>
+          failureOrParkingPoint) = _$_ParkingPointReceived;
 
-  Either<LocationFailure, List<Location>> get failureOrLocation =>
+  Either<ParkingPointFailure, List<ParkingPoint>> get failureOrParkingPoint =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$_LocationReceivedCopyWith<_$_LocationReceived> get copyWith =>
+  _$$_ParkingPointReceivedCopyWith<_$_ParkingPointReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$LocationWatcherState {
+mixin _$ParkingPointWatcherState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Location> location) loadSuccess,
-    required TResult Function(LocationFailure locationFailure) loadFailure,
+    required TResult Function(List<ParkingPoint> parkingPoint) loadSuccess,
+    required TResult Function(ParkingPointFailure parkingPointFailure)
+        loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -383,20 +430,20 @@ mixin _$LocationWatcherState {
 }
 
 /// @nodoc
-abstract class $LocationWatcherStateCopyWith<$Res> {
-  factory $LocationWatcherStateCopyWith(LocationWatcherState value,
-          $Res Function(LocationWatcherState) then) =
-      _$LocationWatcherStateCopyWithImpl<$Res>;
+abstract class $ParkingPointWatcherStateCopyWith<$Res> {
+  factory $ParkingPointWatcherStateCopyWith(ParkingPointWatcherState value,
+          $Res Function(ParkingPointWatcherState) then) =
+      _$ParkingPointWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LocationWatcherStateCopyWithImpl<$Res>
-    implements $LocationWatcherStateCopyWith<$Res> {
-  _$LocationWatcherStateCopyWithImpl(this._value, this._then);
+class _$ParkingPointWatcherStateCopyWithImpl<$Res>
+    implements $ParkingPointWatcherStateCopyWith<$Res> {
+  _$ParkingPointWatcherStateCopyWithImpl(this._value, this._then);
 
-  final LocationWatcherState _value;
+  final ParkingPointWatcherState _value;
   // ignore: unused_field
-  final $Res Function(LocationWatcherState) _then;
+  final $Res Function(ParkingPointWatcherState) _then;
 }
 
 /// @nodoc
@@ -408,7 +455,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$LocationWatcherStateCopyWithImpl<$Res>
+    extends _$ParkingPointWatcherStateCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, (v) => _then(v as _$_Initial));
@@ -424,7 +471,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'LocationWatcherState.initial()';
+    return 'ParkingPointWatcherState.initial()';
   }
 
   @override
@@ -441,8 +488,9 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Location> location) loadSuccess,
-    required TResult Function(LocationFailure locationFailure) loadFailure,
+    required TResult Function(List<ParkingPoint> parkingPoint) loadSuccess,
+    required TResult Function(ParkingPointFailure parkingPointFailure)
+        loadFailure,
   }) {
     return initial();
   }
@@ -452,8 +500,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -463,8 +511,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -511,7 +559,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements LocationWatcherState {
+abstract class _Initial implements ParkingPointWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -524,7 +572,7 @@ abstract class _$$_LoadInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadInProgressCopyWithImpl<$Res>
-    extends _$LocationWatcherStateCopyWithImpl<$Res>
+    extends _$ParkingPointWatcherStateCopyWithImpl<$Res>
     implements _$$_LoadInProgressCopyWith<$Res> {
   __$$_LoadInProgressCopyWithImpl(
       _$_LoadInProgress _value, $Res Function(_$_LoadInProgress) _then)
@@ -541,7 +589,7 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   String toString() {
-    return 'LocationWatcherState.loadInProgress()';
+    return 'ParkingPointWatcherState.loadInProgress()';
   }
 
   @override
@@ -558,8 +606,9 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Location> location) loadSuccess,
-    required TResult Function(LocationFailure locationFailure) loadFailure,
+    required TResult Function(List<ParkingPoint> parkingPoint) loadSuccess,
+    required TResult Function(ParkingPointFailure parkingPointFailure)
+        loadFailure,
   }) {
     return loadInProgress();
   }
@@ -569,8 +618,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
   }) {
     return loadInProgress?.call();
   }
@@ -580,8 +629,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -628,7 +677,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   }
 }
 
-abstract class _LoadInProgress implements LocationWatcherState {
+abstract class _LoadInProgress implements ParkingPointWatcherState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
@@ -637,12 +686,12 @@ abstract class _$$_LoadSuccessCopyWith<$Res> {
   factory _$$_LoadSuccessCopyWith(
           _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
       __$$_LoadSuccessCopyWithImpl<$Res>;
-  $Res call({List<Location> location});
+  $Res call({List<ParkingPoint> parkingPoint});
 }
 
 /// @nodoc
 class __$$_LoadSuccessCopyWithImpl<$Res>
-    extends _$LocationWatcherStateCopyWithImpl<$Res>
+    extends _$ParkingPointWatcherStateCopyWithImpl<$Res>
     implements _$$_LoadSuccessCopyWith<$Res> {
   __$$_LoadSuccessCopyWithImpl(
       _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
@@ -653,13 +702,13 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? location = freezed,
+    Object? parkingPoint = freezed,
   }) {
     return _then(_$_LoadSuccess(
-      location == freezed
-          ? _value._location
-          : location // ignore: cast_nullable_to_non_nullable
-              as List<Location>,
+      parkingPoint == freezed
+          ? _value._parkingPoint
+          : parkingPoint // ignore: cast_nullable_to_non_nullable
+              as List<ParkingPoint>,
     ));
   }
 }
@@ -667,18 +716,19 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(final List<Location> location) : _location = location;
+  const _$_LoadSuccess(final List<ParkingPoint> parkingPoint)
+      : _parkingPoint = parkingPoint;
 
-  final List<Location> _location;
+  final List<ParkingPoint> _parkingPoint;
   @override
-  List<Location> get location {
+  List<ParkingPoint> get parkingPoint {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_location);
+    return EqualUnmodifiableListView(_parkingPoint);
   }
 
   @override
   String toString() {
-    return 'LocationWatcherState.loadSuccess(location: $location)';
+    return 'ParkingPointWatcherState.loadSuccess(parkingPoint: $parkingPoint)';
   }
 
   @override
@@ -686,12 +736,13 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoadSuccess &&
-            const DeepCollectionEquality().equals(other._location, _location));
+            const DeepCollectionEquality()
+                .equals(other._parkingPoint, _parkingPoint));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_location));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_parkingPoint));
 
   @JsonKey(ignore: true)
   @override
@@ -703,10 +754,11 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Location> location) loadSuccess,
-    required TResult Function(LocationFailure locationFailure) loadFailure,
+    required TResult Function(List<ParkingPoint> parkingPoint) loadSuccess,
+    required TResult Function(ParkingPointFailure parkingPointFailure)
+        loadFailure,
   }) {
-    return loadSuccess(location);
+    return loadSuccess(parkingPoint);
   }
 
   @override
@@ -714,10 +766,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
   }) {
-    return loadSuccess?.call(location);
+    return loadSuccess?.call(parkingPoint);
   }
 
   @override
@@ -725,12 +777,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(location);
+      return loadSuccess(parkingPoint);
     }
     return orElse();
   }
@@ -773,10 +825,11 @@ class _$_LoadSuccess implements _LoadSuccess {
   }
 }
 
-abstract class _LoadSuccess implements LocationWatcherState {
-  const factory _LoadSuccess(final List<Location> location) = _$_LoadSuccess;
+abstract class _LoadSuccess implements ParkingPointWatcherState {
+  const factory _LoadSuccess(final List<ParkingPoint> parkingPoint) =
+      _$_LoadSuccess;
 
-  List<Location> get location => throw _privateConstructorUsedError;
+  List<ParkingPoint> get parkingPoint => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -787,14 +840,14 @@ abstract class _$$_LoadFailureCopyWith<$Res> {
   factory _$$_LoadFailureCopyWith(
           _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
       __$$_LoadFailureCopyWithImpl<$Res>;
-  $Res call({LocationFailure locationFailure});
+  $Res call({ParkingPointFailure parkingPointFailure});
 
-  $LocationFailureCopyWith<$Res> get locationFailure;
+  $ParkingPointFailureCopyWith<$Res> get parkingPointFailure;
 }
 
 /// @nodoc
 class __$$_LoadFailureCopyWithImpl<$Res>
-    extends _$LocationWatcherStateCopyWithImpl<$Res>
+    extends _$ParkingPointWatcherStateCopyWithImpl<$Res>
     implements _$$_LoadFailureCopyWith<$Res> {
   __$$_LoadFailureCopyWithImpl(
       _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
@@ -805,20 +858,21 @@ class __$$_LoadFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? locationFailure = freezed,
+    Object? parkingPointFailure = freezed,
   }) {
     return _then(_$_LoadFailure(
-      locationFailure == freezed
-          ? _value.locationFailure
-          : locationFailure // ignore: cast_nullable_to_non_nullable
-              as LocationFailure,
+      parkingPointFailure == freezed
+          ? _value.parkingPointFailure
+          : parkingPointFailure // ignore: cast_nullable_to_non_nullable
+              as ParkingPointFailure,
     ));
   }
 
   @override
-  $LocationFailureCopyWith<$Res> get locationFailure {
-    return $LocationFailureCopyWith<$Res>(_value.locationFailure, (value) {
-      return _then(_value.copyWith(locationFailure: value));
+  $ParkingPointFailureCopyWith<$Res> get parkingPointFailure {
+    return $ParkingPointFailureCopyWith<$Res>(_value.parkingPointFailure,
+        (value) {
+      return _then(_value.copyWith(parkingPointFailure: value));
     });
   }
 }
@@ -826,14 +880,14 @@ class __$$_LoadFailureCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.locationFailure);
+  const _$_LoadFailure(this.parkingPointFailure);
 
   @override
-  final LocationFailure locationFailure;
+  final ParkingPointFailure parkingPointFailure;
 
   @override
   String toString() {
-    return 'LocationWatcherState.loadFailure(locationFailure: $locationFailure)';
+    return 'ParkingPointWatcherState.loadFailure(parkingPointFailure: $parkingPointFailure)';
   }
 
   @override
@@ -842,12 +896,12 @@ class _$_LoadFailure implements _LoadFailure {
         (other.runtimeType == runtimeType &&
             other is _$_LoadFailure &&
             const DeepCollectionEquality()
-                .equals(other.locationFailure, locationFailure));
+                .equals(other.parkingPointFailure, parkingPointFailure));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(locationFailure));
+      runtimeType, const DeepCollectionEquality().hash(parkingPointFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -859,10 +913,11 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Location> location) loadSuccess,
-    required TResult Function(LocationFailure locationFailure) loadFailure,
+    required TResult Function(List<ParkingPoint> parkingPoint) loadSuccess,
+    required TResult Function(ParkingPointFailure parkingPointFailure)
+        loadFailure,
   }) {
-    return loadFailure(locationFailure);
+    return loadFailure(parkingPointFailure);
   }
 
   @override
@@ -870,10 +925,10 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
   }) {
-    return loadFailure?.call(locationFailure);
+    return loadFailure?.call(parkingPointFailure);
   }
 
   @override
@@ -881,12 +936,12 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Location> location)? loadSuccess,
-    TResult Function(LocationFailure locationFailure)? loadFailure,
+    TResult Function(List<ParkingPoint> parkingPoint)? loadSuccess,
+    TResult Function(ParkingPointFailure parkingPointFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
-      return loadFailure(locationFailure);
+      return loadFailure(parkingPointFailure);
     }
     return orElse();
   }
@@ -929,11 +984,12 @@ class _$_LoadFailure implements _LoadFailure {
   }
 }
 
-abstract class _LoadFailure implements LocationWatcherState {
-  const factory _LoadFailure(final LocationFailure locationFailure) =
+abstract class _LoadFailure implements ParkingPointWatcherState {
+  const factory _LoadFailure(final ParkingPointFailure parkingPointFailure) =
       _$_LoadFailure;
 
-  LocationFailure get locationFailure => throw _privateConstructorUsedError;
+  ParkingPointFailure get parkingPointFailure =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

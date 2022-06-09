@@ -22,7 +22,7 @@ class ChooseSpotButtonWidget extends StatelessWidget {
                   : () {
                       context.read<OrderCubit>().changePage(Status.isPaying);
                     },
-              child: Text("Choose ${state.spot}"),
+              child: Text("Choose ${state.selectedSpot?.name ?? ''}"),
             ),
           ),
         );

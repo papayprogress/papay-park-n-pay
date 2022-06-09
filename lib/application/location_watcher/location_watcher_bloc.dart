@@ -32,7 +32,7 @@ class LocationWatcherBloc
               );
         },
         locationReceived: (e) async {
-          e.failureOrNotes.fold(
+          e.failureOrLocation.fold(
             (l) => emit(LocationWatcherState.loadFailure(l)),
             (r) => emit(LocationWatcherState.loadSuccess(r)),
           );

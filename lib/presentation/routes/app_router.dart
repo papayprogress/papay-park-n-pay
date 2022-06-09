@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:papay/domain/location/location.dart';
 import 'package:papay/presentation/auth/login/login_page.dart';
 import 'package:papay/presentation/auth/register/register_page.dart';
 import 'package:papay/presentation/auth/register/register_success_page.dart';

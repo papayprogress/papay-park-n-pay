@@ -1,25 +1,23 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:papay/domain/location/location.dart';
+import 'package:papay/domain/parking_point/parking_point.dart';
 
 part 'order_state.dart';
 part 'order_cubit.freezed.dart';
-
-final List<String> dummySpot = [
-  for (int i = 1; i <= 16; i++) "A$i",
-];
 
 @injectable
 class OrderCubit extends Cubit<OrderState> {
   OrderCubit() : super(OrderState.initial());
 
-  void selectLocation(int value) {
-    emit(state.copyWith(idLocation: value));
+  void selectLocation(Location value) {
+    emit(state.copyWith(location: value));
   }
 
-  void selectSpot(int value) {
+  void selectSpot(ParkingPoint value) {
     emit(state.copyWith(
-      selectedSpot: state.selectedSpot == value ? -1 : value,
+      selectedSpot: state.selectedSpot?.id == value.id ? null : value,
     ));
   }
 

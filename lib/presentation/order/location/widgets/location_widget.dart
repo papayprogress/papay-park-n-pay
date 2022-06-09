@@ -59,7 +59,8 @@ class LocationWidget extends StatelessWidget {
                       ListTile(
                         contentPadding: EdgeInsets.zero,
                         onTap: () {
-                          context.router.push(OrderWrapperRoute(idLocation: i));
+                          context.router.push(
+                              OrderWrapperRoute(location: state.location[i]));
                         },
                         leading: const CircleAvatar(
                           backgroundColor: AppColor.primary,

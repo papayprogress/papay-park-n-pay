@@ -18,8 +18,7 @@ _$_History _$$_HistoryFromJson(Map<String, dynamic> json) => _$_History(
       paymentStatus: json['payment_status'] as bool,
       paymentTotal: json['payment_total'] as String,
       vehicleType: json['vehicle_type'] as int,
-      parkingPointName: json['parkin_point_name'] as String,
-      createdAt: DateTime.parse(json['created_at'] as String),
+      parkingPointName: json['parking_point_name'] as String,
     );
 
 Map<String, dynamic> _$$_HistoryToJson(_$_History instance) =>
@@ -35,6 +34,5 @@ Map<String, dynamic> _$$_HistoryToJson(_$_History instance) =>
       'payment_status': instance.paymentStatus,
       'payment_total': instance.paymentTotal,
       'vehicle_type': instance.vehicleType,
-      'parkin_point_name': instance.parkingPointName,
-      'created_at': instance.createdAt.toIso8601String(),
+      'parking_point_name': instance.parkingPointName,
     };

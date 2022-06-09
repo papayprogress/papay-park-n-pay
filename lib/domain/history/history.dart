@@ -19,8 +19,7 @@ class History with _$History {
     @JsonKey(name: 'payment_status') required final bool paymentStatus,
     @JsonKey(name: 'payment_total') required final String paymentTotal,
     @JsonKey(name: 'vehicle_type') required final int vehicleType,
-    @JsonKey(name: 'parkin_point_name') required final String parkingPointName,
-    @JsonKey(name: 'created_at') required final DateTime createdAt,
+    @JsonKey(name: 'parking_point_name') required final String parkingPointName,
   }) = _History;
 
   const History._();
@@ -39,7 +38,6 @@ class History with _$History {
       paymentTotal: paymentTotal,
       vehicleType: vehicleType,
       parkingPointName: parkingPointName,
-      createdAt: createdAt,
     );
   }
 

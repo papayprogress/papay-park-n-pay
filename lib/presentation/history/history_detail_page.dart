@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:papay/domain/history/history.dart';
 import 'package:papay/presentation/core/app_theme.dart';
 import 'package:papay/presentation/routes/app_router.dart';
 
 class HistoryDetailPage extends StatelessWidget {
-  const HistoryDetailPage({Key? key}) : super(key: key);
+  const HistoryDetailPage({Key? key, required this.history}) : super(key: key);
+
+  final History history;
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +24,19 @@ class HistoryDetailPage extends StatelessWidget {
             ListView(
               padding: const EdgeInsets.all(30),
               children: [
-                const Text(
-                  '#18239172389',
-                  style: TextStyle(color: AppColor.lightPrimary),
+                Text(
+                  history.id!,
+                  style: const TextStyle(color: AppColor.lightPrimary),
                 ),
                 const SizedBox(height: 16),
                 ListTile(
                   contentPadding: EdgeInsets.zero,
-                  title: const Text(
-                    "Parkiran Akhdan",
+                  title: Text(
+                    history.name,
                     style: AppFont.headline2,
                   ),
                   subtitle: Text(
-                    "Spot A3, 10 Maret 2022",
+                    history.address,
                     style:
                         AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
                   ),
@@ -75,57 +78,57 @@ class HistoryDetailPage extends StatelessWidget {
                     1: FlexColumnWidth(1),
                     2: FlexColumnWidth(5),
                   },
-                  children: const [
+                  children: [
                     TableRow(
                       children: [
-                        TableCell(
+                        const TableCell(
                           child: Text('Booking ID'),
                         ),
-                        TableCell(
+                        const TableCell(
                           child: Text(':'),
                         ),
                         TableCell(
-                          child: Text('#PAKH2613'),
+                          child: Text(history.id!),
                         ),
                       ],
                     ),
-                    TableRow(children: [
+                    const TableRow(children: [
                       SizedBox(height: 16),
                       SizedBox(height: 16),
                       SizedBox(height: 16),
                     ]),
                     TableRow(
                       children: [
-                        TableCell(
+                        const TableCell(
                           child: Text('Place'),
                         ),
-                        TableCell(
+                        const TableCell(
                           child: Text(':'),
                         ),
                         TableCell(
-                          child: Text('Parkiran Akhdan'),
+                          child: Text(history.address),
                         ),
                       ],
                     ),
-                    TableRow(children: [
+                    const TableRow(children: [
                       SizedBox(height: 16),
                       SizedBox(height: 16),
                       SizedBox(height: 16),
                     ]),
                     TableRow(
                       children: [
-                        TableCell(
+                        const TableCell(
                           child: Text('Spot'),
                         ),
-                        TableCell(
+                        const TableCell(
                           child: Text(':'),
                         ),
                         TableCell(
-                          child: Text('A3'),
+                          child: Text(history.parkingPointName),
                         ),
                       ],
                     ),
-                    TableRow(
+                    const TableRow(
                       children: [
                         SizedBox(height: 16),
                         SizedBox(height: 16),
@@ -134,25 +137,25 @@ class HistoryDetailPage extends StatelessWidget {
                     ),
                     TableRow(
                       children: [
-                        TableCell(
+                        const TableCell(
                           child: Text('Day and Date'),
                         ),
-                        TableCell(
+                        const TableCell(
                           child: Text(':'),
                         ),
                         TableCell(
-                          child: Text('Sunday, 10 June 2022'),
+                          child: Text(history.date),
                         ),
                       ],
                     ),
-                    TableRow(
+                    const TableRow(
                       children: [
                         SizedBox(height: 16),
                         SizedBox(height: 16),
                         SizedBox(height: 16),
                       ],
                     ),
-                    TableRow(
+                    const TableRow(
                       children: [
                         TableCell(
                           child: Text('Hours'),
@@ -173,15 +176,21 @@ class HistoryDetailPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
-                const Text(
-                  'Rp. 240.000',
-                  style: TextStyle(color: Colors.red),
+                Text(
+                  'Rp. ${history.paymentTotal}',
+                  style: const TextStyle(color: Colors.red),
                 ),
                 const SizedBox(height: 8),
-                const Text(
-                  '(Sudah Dibayar ✔)',
-                  style: TextStyle(color: Colors.green),
-                ),
+                if (history.paymentStatus)
+                  const Text(
+                    '(Sudah Dibayar ✔)',
+                    style: TextStyle(color: Colors.green),
+                  )
+                else
+                  const Text(
+                    '(Belum Dibayar ❌)',
+                    style: TextStyle(color: Colors.red),
+                  ),
                 const SizedBox(height: 32),
                 FractionallySizedBox(
                   widthFactor: 1,

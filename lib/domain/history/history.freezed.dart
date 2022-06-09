@@ -44,10 +44,8 @@ mixin _$History {
   String get paymentTotal => throw _privateConstructorUsedError;
   @JsonKey(name: 'vehicle_type')
   int get vehicleType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'parkin_point_name')
+  @JsonKey(name: 'parking_point_name')
   String get parkingPointName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'created_at')
-  DateTime get createdAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -71,8 +69,7 @@ abstract class $HistoryCopyWith<$Res> {
       @JsonKey(name: 'payment_status') bool paymentStatus,
       @JsonKey(name: 'payment_total') String paymentTotal,
       @JsonKey(name: 'vehicle_type') int vehicleType,
-      @JsonKey(name: 'parkin_point_name') String parkingPointName,
-      @JsonKey(name: 'created_at') DateTime createdAt});
+      @JsonKey(name: 'parking_point_name') String parkingPointName});
 }
 
 /// @nodoc
@@ -98,7 +95,6 @@ class _$HistoryCopyWithImpl<$Res> implements $HistoryCopyWith<$Res> {
     Object? paymentTotal = freezed,
     Object? vehicleType = freezed,
     Object? parkingPointName = freezed,
-    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -153,10 +149,6 @@ class _$HistoryCopyWithImpl<$Res> implements $HistoryCopyWith<$Res> {
           ? _value.parkingPointName
           : parkingPointName // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: createdAt == freezed
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ));
   }
 }
@@ -180,8 +172,7 @@ abstract class _$$_HistoryCopyWith<$Res> implements $HistoryCopyWith<$Res> {
       @JsonKey(name: 'payment_status') bool paymentStatus,
       @JsonKey(name: 'payment_total') String paymentTotal,
       @JsonKey(name: 'vehicle_type') int vehicleType,
-      @JsonKey(name: 'parkin_point_name') String parkingPointName,
-      @JsonKey(name: 'created_at') DateTime createdAt});
+      @JsonKey(name: 'parking_point_name') String parkingPointName});
 }
 
 /// @nodoc
@@ -208,7 +199,6 @@ class __$$_HistoryCopyWithImpl<$Res> extends _$HistoryCopyWithImpl<$Res>
     Object? paymentTotal = freezed,
     Object? vehicleType = freezed,
     Object? parkingPointName = freezed,
-    Object? createdAt = freezed,
   }) {
     return _then(_$_History(
       id: id == freezed
@@ -263,10 +253,6 @@ class __$$_HistoryCopyWithImpl<$Res> extends _$HistoryCopyWithImpl<$Res>
           ? _value.parkingPointName
           : parkingPointName // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: createdAt == freezed
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ));
   }
 }
@@ -287,8 +273,7 @@ class _$_History extends _History {
       @JsonKey(name: 'payment_status') required this.paymentStatus,
       @JsonKey(name: 'payment_total') required this.paymentTotal,
       @JsonKey(name: 'vehicle_type') required this.vehicleType,
-      @JsonKey(name: 'parkin_point_name') required this.parkingPointName,
-      @JsonKey(name: 'created_at') required this.createdAt})
+      @JsonKey(name: 'parking_point_name') required this.parkingPointName})
       : super._();
 
   factory _$_History.fromJson(Map<String, dynamic> json) =>
@@ -331,15 +316,12 @@ class _$_History extends _History {
   @JsonKey(name: 'vehicle_type')
   final int vehicleType;
   @override
-  @JsonKey(name: 'parkin_point_name')
+  @JsonKey(name: 'parking_point_name')
   final String parkingPointName;
-  @override
-  @JsonKey(name: 'created_at')
-  final DateTime createdAt;
 
   @override
   String toString() {
-    return 'History(id: $id, idLocation: $idLocation, name: $name, address: $address, lat: $lat, lon: $lon, date: $date, startedAt: $startedAt, finishedAt: $finishedAt, paymentStatus: $paymentStatus, paymentTotal: $paymentTotal, vehicleType: $vehicleType, parkingPointName: $parkingPointName, createdAt: $createdAt)';
+    return 'History(id: $id, idLocation: $idLocation, name: $name, address: $address, lat: $lat, lon: $lon, date: $date, startedAt: $startedAt, finishedAt: $finishedAt, paymentStatus: $paymentStatus, paymentTotal: $paymentTotal, vehicleType: $vehicleType, parkingPointName: $parkingPointName)';
   }
 
   @override
@@ -365,8 +347,7 @@ class _$_History extends _History {
             const DeepCollectionEquality()
                 .equals(other.vehicleType, vehicleType) &&
             const DeepCollectionEquality()
-                .equals(other.parkingPointName, parkingPointName) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt));
+                .equals(other.parkingPointName, parkingPointName));
   }
 
   @JsonKey(ignore: true)
@@ -385,8 +366,7 @@ class _$_History extends _History {
       const DeepCollectionEquality().hash(paymentStatus),
       const DeepCollectionEquality().hash(paymentTotal),
       const DeepCollectionEquality().hash(vehicleType),
-      const DeepCollectionEquality().hash(parkingPointName),
-      const DeepCollectionEquality().hash(createdAt));
+      const DeepCollectionEquality().hash(parkingPointName));
 
   @JsonKey(ignore: true)
   @override
@@ -425,10 +405,8 @@ abstract class _History extends History {
           required final String paymentTotal,
       @JsonKey(name: 'vehicle_type')
           required final int vehicleType,
-      @JsonKey(name: 'parkin_point_name')
-          required final String parkingPointName,
-      @JsonKey(name: 'created_at')
-          required final DateTime createdAt}) = _$_History;
+      @JsonKey(name: 'parking_point_name')
+          required final String parkingPointName}) = _$_History;
   const _History._() : super._();
 
   factory _History.fromJson(Map<String, dynamic> json) = _$_History.fromJson;
@@ -470,11 +448,8 @@ abstract class _History extends History {
   @JsonKey(name: 'vehicle_type')
   int get vehicleType => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'parkin_point_name')
+  @JsonKey(name: 'parking_point_name')
   String get parkingPointName => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(name: 'created_at')
-  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_HistoryCopyWith<_$_History> get copyWith =>

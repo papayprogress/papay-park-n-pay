@@ -68,8 +68,10 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData, child: const HistoryPage());
     },
     HistoryDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<HistoryDetailRouteArgs>();
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const HistoryDetailPage());
+          routeData: routeData,
+          child: HistoryDetailPage(key: args.key, history: args.history));
     },
     SettingRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -235,11 +237,26 @@ class HistoryRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [HistoryDetailPage]
-class HistoryDetailRoute extends PageRouteInfo<void> {
-  const HistoryDetailRoute()
-      : super(HistoryDetailRoute.name, path: '/history-detail-page');
+class HistoryDetailRoute extends PageRouteInfo<HistoryDetailRouteArgs> {
+  HistoryDetailRoute({Key? key, required History history})
+      : super(HistoryDetailRoute.name,
+            path: '/history-detail-page',
+            args: HistoryDetailRouteArgs(key: key, history: history));
 
   static const String name = 'HistoryDetailRoute';
+}
+
+class HistoryDetailRouteArgs {
+  const HistoryDetailRouteArgs({this.key, required this.history});
+
+  final Key? key;
+
+  final History history;
+
+  @override
+  String toString() {
+    return 'HistoryDetailRouteArgs{key: $key, history: $history}';
+  }
 }
 
 /// generated route for

@@ -69,7 +69,7 @@ class NotificationPage extends StatelessWidget {
                   ),
                   ListTile(
                     onTap: () {
-                      context.router.push(const HistoryDetailRoute());
+                      // context.router.push(HistoryDetailRoute());
                     },
                     contentPadding: const EdgeInsets.symmetric(vertical: 16),
                     leading: const CircleAvatar(
@@ -90,7 +90,7 @@ class NotificationPage extends StatelessWidget {
                   ),
                   ListTile(
                     onTap: () {
-                      context.router.push(const HistoryDetailRoute());
+                      // context.router.push(HistoryDetailRoute());
                     },
                     contentPadding: const EdgeInsets.symmetric(vertical: 16),
                     leading: const CircleAvatar(
@@ -114,7 +114,7 @@ class NotificationPage extends StatelessWidget {
                   ),
                   ListTile(
                     onTap: () {
-                      context.router.push(const HistoryDetailRoute());
+                      // context.router.push(HistoryDetailRoute());
                     },
                     contentPadding: const EdgeInsets.symmetric(vertical: 16),
                     leading: const CircleAvatar(

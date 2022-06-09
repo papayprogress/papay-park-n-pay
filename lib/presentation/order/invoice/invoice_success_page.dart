@@ -67,7 +67,7 @@ class InvoiceSuccessPage extends StatelessWidget {
                     widthFactor: 1,
                     child: OutlinedButton(
                       onPressed: () {
-                        context.router.replace(const HistoryDetailRoute());
+                        // context.router.replace(const HistoryDetailRoute());
                       },
                       child: const Text('View Booking Detail'),
                     ),

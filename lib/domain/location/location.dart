@@ -6,12 +6,6 @@ part 'location.g.dart';
 
 @freezed
 class Location with _$Location {
-  // close_hour: 22:00,
-  // address: Jl. A. H. Nasution,
-  // name: Parkiran Saintek,
-  // lon: 107.71779339328984,
-  // open_hour: 04:00,
-  // lat: -6.930301342513141
   const factory Location({
     @JsonKey(ignore: true) final String? id,
     @JsonKey(name: 'name') required final String name,
@@ -20,6 +14,8 @@ class Location with _$Location {
     @JsonKey(name: 'lon') required final String lon,
     @JsonKey(name: 'open_hour') required final String openHour,
     @JsonKey(name: 'close_hour') required final String closeHour,
+    @JsonKey(name: 'rate_per_hour') required final String ratePerHour,
+    @JsonKey(name: 'size_per_spot') required final String sizePerSpot,
   }) = _Location;
 
   const Location._();
@@ -32,6 +28,8 @@ class Location with _$Location {
       lon: lon,
       openHour: openHour,
       closeHour: closeHour,
+      ratePerHour: ratePerHour,
+      sizePerSpot: sizePerSpot,
     );
   }
 

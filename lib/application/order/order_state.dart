@@ -11,12 +11,14 @@ class OrderState with _$OrderState {
     required final int selectedTime,
     final String? referralCode,
     required final int selectedPayment,
+    required final int availableSpot,
   }) = _OrderState;
 
   factory OrderState.initial() => const OrderState(
         status: Status.isChoosing,
         selectedTime: -1,
         selectedPayment: -1,
+        availableSpot: 0,
       );
 
   const OrderState._();

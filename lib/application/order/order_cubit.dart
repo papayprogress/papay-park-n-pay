@@ -41,6 +41,10 @@ class OrderCubit extends Cubit<OrderState> {
     ));
   }
 
+  void changeAvailableSpot(int value) {
+    emit(state.copyWith(availableSpot: value));
+  }
+
   void changePage(Status page) {
     emit(state.copyWith(status: page));
   }

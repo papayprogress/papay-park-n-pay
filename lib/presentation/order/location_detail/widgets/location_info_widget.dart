@@ -5,72 +5,82 @@ import 'package:papay/presentation/core/app_theme.dart';
 class LocationInfoWidget extends StatelessWidget {
   const LocationInfoWidget({
     Key? key,
+    required this.rate,
+    required this.size,
+    required this.available,
   }) : super(key: key);
+
+  final String rate;
+  final String size;
+  final int available;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(32),
-      color: AppColor.darkerBlack,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 32,
+        vertical: 24,
+      ),
+      color: AppColor.lightPrimary,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Expanded(
             child: Column(
-              children: const [
-                FaIcon(
+              children: [
+                const FaIcon(
                   FontAwesomeIcons.moneyBill,
-                  color: AppColor.white,
+                  color: AppColor.darkerBlack,
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  'Rp. 2.000',
-                  style: TextStyle(color: AppColor.white),
+                  'Rp. $rate',
+                  style: const TextStyle(color: AppColor.darkerBlack),
                 ),
-                SizedBox(height: 4),
-                Text(
+                const SizedBox(height: 4),
+                const Text(
                   'Per Hour',
-                  style: TextStyle(color: AppColor.white),
+                  style: TextStyle(color: AppColor.darkerBlack),
                 ),
               ],
             ),
           ),
           Expanded(
             child: Column(
-              children: const [
-                FaIcon(
+              children: [
+                const FaIcon(
                   FontAwesomeIcons.map,
-                  color: AppColor.white,
+                  color: AppColor.darkerBlack,
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '4x4 m',
-                  style: TextStyle(color: AppColor.white),
+                  '$size m',
+                  style: const TextStyle(color: AppColor.darkerBlack),
                 ),
-                SizedBox(height: 4),
-                Text(
+                const SizedBox(height: 4),
+                const Text(
                   'Per Spot',
-                  style: TextStyle(color: AppColor.white),
+                  style: TextStyle(color: AppColor.darkerBlack),
                 ),
               ],
             ),
           ),
           Expanded(
             child: Column(
-              children: const [
-                FaIcon(
+              children: [
+                const FaIcon(
                   FontAwesomeIcons.squareParking,
-                  color: AppColor.white,
+                  color: AppColor.darkerBlack,
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '4 Spot',
-                  style: TextStyle(color: AppColor.white),
+                  '$available Spot',
+                  style: const TextStyle(color: AppColor.darkerBlack),
                 ),
-                SizedBox(height: 4),
-                Text(
+                const SizedBox(height: 4),
+                const Text(
                   'Available',
-                  style: TextStyle(color: AppColor.white),
+                  style: TextStyle(color: AppColor.darkerBlack),
                 ),
               ],
             ),

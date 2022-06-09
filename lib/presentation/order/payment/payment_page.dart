@@ -16,7 +16,16 @@ class PaymentPage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(30),
           children: [
-            const LocationHeaderWidget(hasPadding: false),
+            BlocBuilder<OrderCubit, OrderState>(
+              buildWhen: (p, c) => p.location != c.location,
+              builder: (context, state) {
+                return LocationHeaderWidget(
+                  hasPadding: false,
+                  name: state.location!.name,
+                  address: state.location!.address,
+                );
+              },
+            ),
             const Divider(),
             const PaymentFormWidget(),
             const SizedBox(height: 32),

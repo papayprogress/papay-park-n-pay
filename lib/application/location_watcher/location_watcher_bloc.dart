@@ -27,8 +27,8 @@ class LocationWatcherBloc
           emit(const LocationWatcherState.loadInProgress());
           await _locationStreamSubscription?.cancel();
           _locationStreamSubscription = _locationRepository.watchAll().listen(
-                (failureOrNotes) =>
-                    add(LocationWatcherEvent.locationReceived(failureOrNotes)),
+                (failureOrLocation) => add(
+                    LocationWatcherEvent.locationReceived(failureOrLocation)),
               );
         },
         locationReceived: (e) async {

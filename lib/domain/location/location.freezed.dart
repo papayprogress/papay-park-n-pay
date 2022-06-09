@@ -34,6 +34,10 @@ mixin _$Location {
   String get openHour => throw _privateConstructorUsedError;
   @JsonKey(name: 'close_hour')
   String get closeHour => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rate_per_hour')
+  String get ratePerHour => throw _privateConstructorUsedError;
+  @JsonKey(name: 'size_per_spot')
+  String get sizePerSpot => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +56,9 @@ abstract class $LocationCopyWith<$Res> {
       @JsonKey(name: 'lat') String lat,
       @JsonKey(name: 'lon') String lon,
       @JsonKey(name: 'open_hour') String openHour,
-      @JsonKey(name: 'close_hour') String closeHour});
+      @JsonKey(name: 'close_hour') String closeHour,
+      @JsonKey(name: 'rate_per_hour') String ratePerHour,
+      @JsonKey(name: 'size_per_spot') String sizePerSpot});
 }
 
 /// @nodoc
@@ -72,6 +78,8 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
     Object? lon = freezed,
     Object? openHour = freezed,
     Object? closeHour = freezed,
+    Object? ratePerHour = freezed,
+    Object? sizePerSpot = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -102,6 +110,14 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
           ? _value.closeHour
           : closeHour // ignore: cast_nullable_to_non_nullable
               as String,
+      ratePerHour: ratePerHour == freezed
+          ? _value.ratePerHour
+          : ratePerHour // ignore: cast_nullable_to_non_nullable
+              as String,
+      sizePerSpot: sizePerSpot == freezed
+          ? _value.sizePerSpot
+          : sizePerSpot // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -119,7 +135,9 @@ abstract class _$$_LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
       @JsonKey(name: 'lat') String lat,
       @JsonKey(name: 'lon') String lon,
       @JsonKey(name: 'open_hour') String openHour,
-      @JsonKey(name: 'close_hour') String closeHour});
+      @JsonKey(name: 'close_hour') String closeHour,
+      @JsonKey(name: 'rate_per_hour') String ratePerHour,
+      @JsonKey(name: 'size_per_spot') String sizePerSpot});
 }
 
 /// @nodoc
@@ -141,6 +159,8 @@ class __$$_LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
     Object? lon = freezed,
     Object? openHour = freezed,
     Object? closeHour = freezed,
+    Object? ratePerHour = freezed,
+    Object? sizePerSpot = freezed,
   }) {
     return _then(_$_Location(
       id: id == freezed
@@ -171,6 +191,14 @@ class __$$_LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
           ? _value.closeHour
           : closeHour // ignore: cast_nullable_to_non_nullable
               as String,
+      ratePerHour: ratePerHour == freezed
+          ? _value.ratePerHour
+          : ratePerHour // ignore: cast_nullable_to_non_nullable
+              as String,
+      sizePerSpot: sizePerSpot == freezed
+          ? _value.sizePerSpot
+          : sizePerSpot // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -185,7 +213,9 @@ class _$_Location extends _Location {
       @JsonKey(name: 'lat') required this.lat,
       @JsonKey(name: 'lon') required this.lon,
       @JsonKey(name: 'open_hour') required this.openHour,
-      @JsonKey(name: 'close_hour') required this.closeHour})
+      @JsonKey(name: 'close_hour') required this.closeHour,
+      @JsonKey(name: 'rate_per_hour') required this.ratePerHour,
+      @JsonKey(name: 'size_per_spot') required this.sizePerSpot})
       : super._();
 
   factory _$_Location.fromJson(Map<String, dynamic> json) =>
@@ -212,10 +242,16 @@ class _$_Location extends _Location {
   @override
   @JsonKey(name: 'close_hour')
   final String closeHour;
+  @override
+  @JsonKey(name: 'rate_per_hour')
+  final String ratePerHour;
+  @override
+  @JsonKey(name: 'size_per_spot')
+  final String sizePerSpot;
 
   @override
   String toString() {
-    return 'Location(id: $id, name: $name, address: $address, lat: $lat, lon: $lon, openHour: $openHour, closeHour: $closeHour)';
+    return 'Location(id: $id, name: $name, address: $address, lat: $lat, lon: $lon, openHour: $openHour, closeHour: $closeHour, ratePerHour: $ratePerHour, sizePerSpot: $sizePerSpot)';
   }
 
   @override
@@ -229,7 +265,11 @@ class _$_Location extends _Location {
             const DeepCollectionEquality().equals(other.lat, lat) &&
             const DeepCollectionEquality().equals(other.lon, lon) &&
             const DeepCollectionEquality().equals(other.openHour, openHour) &&
-            const DeepCollectionEquality().equals(other.closeHour, closeHour));
+            const DeepCollectionEquality().equals(other.closeHour, closeHour) &&
+            const DeepCollectionEquality()
+                .equals(other.ratePerHour, ratePerHour) &&
+            const DeepCollectionEquality()
+                .equals(other.sizePerSpot, sizePerSpot));
   }
 
   @JsonKey(ignore: true)
@@ -242,7 +282,9 @@ class _$_Location extends _Location {
       const DeepCollectionEquality().hash(lat),
       const DeepCollectionEquality().hash(lon),
       const DeepCollectionEquality().hash(openHour),
-      const DeepCollectionEquality().hash(closeHour));
+      const DeepCollectionEquality().hash(closeHour),
+      const DeepCollectionEquality().hash(ratePerHour),
+      const DeepCollectionEquality().hash(sizePerSpot));
 
   @JsonKey(ignore: true)
   @override
@@ -263,7 +305,9 @@ abstract class _Location extends Location {
           @JsonKey(name: 'lat') required final String lat,
           @JsonKey(name: 'lon') required final String lon,
           @JsonKey(name: 'open_hour') required final String openHour,
-          @JsonKey(name: 'close_hour') required final String closeHour}) =
+          @JsonKey(name: 'close_hour') required final String closeHour,
+          @JsonKey(name: 'rate_per_hour') required final String ratePerHour,
+          @JsonKey(name: 'size_per_spot') required final String sizePerSpot}) =
       _$_Location;
   const _Location._() : super._();
 
@@ -290,6 +334,12 @@ abstract class _Location extends Location {
   @override
   @JsonKey(name: 'close_hour')
   String get closeHour => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'rate_per_hour')
+  String get ratePerHour => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'size_per_spot')
+  String get sizePerSpot => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_LocationCopyWith<_$_Location> get copyWith =>

@@ -13,6 +13,8 @@ _$_Location _$$_LocationFromJson(Map<String, dynamic> json) => _$_Location(
       lon: json['lon'] as String,
       openHour: json['open_hour'] as String,
       closeHour: json['close_hour'] as String,
+      ratePerHour: json['rate_per_hour'] as String,
+      sizePerSpot: json['size_per_spot'] as String,
     );
 
 Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
@@ -23,4 +25,6 @@ Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
       'lon': instance.lon,
       'open_hour': instance.openHour,
       'close_hour': instance.closeHour,
+      'rate_per_hour': instance.ratePerHour,
+      'size_per_spot': instance.sizePerSpot,
     };

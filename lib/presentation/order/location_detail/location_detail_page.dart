@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:papay/application/order/order_cubit.dart';
 import 'package:papay/presentation/order/location_detail/widgets/choose_spot_button_widget.dart';
 import 'package:papay/presentation/order/location_detail/widgets/location_banner_widget.dart';
 import 'package:papay/presentation/order/location_detail/widgets/location_info_widget.dart';
@@ -13,19 +15,38 @@ class LocationDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AutoRouter.of(context);
-    return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          children: const [
-            LocationHeaderWidget(),
-            LocationBannerWidget(),
-            LocationInfoWidget(),
-            ParkingSpaceWidget(),
-            ChooseSpotButtonWidget(),
-            BackButtonWidget(),
-          ],
-        ),
-      ),
+    return BlocBuilder<OrderCubit, OrderState>(
+      builder: (context, state) {
+        return Scaffold(
+          body: SafeArea(
+            child: ListView(
+              children: [
+                LocationHeaderWidget(
+                  name: state.location!.name,
+                  address: state.location!.address,
+                ),
+                LocationBannerWidget(
+                  idLocation: state.location!.id!,
+                ),
+                LocationInfoWidget(
+                  available: state.availableSpot,
+                  rate: state.location!.ratePerHour,
+                  size: state.location!.sizePerSpot,
+                ),
+                ParkingSpaceWidget(
+                  locationId: state.location!.id!,
+                  selectedSpotId: state.selectedSpot?.id,
+                ),
+                ChooseSpotButtonWidget(
+                  canOrder: state.canOrder,
+                  selectedName: state.selectedSpot?.name,
+                ),
+                const BackButtonWidget(),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

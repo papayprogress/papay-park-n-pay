@@ -22,6 +22,7 @@ mixin _$OrderState {
   int get selectedTime => throw _privateConstructorUsedError;
   String? get referralCode => throw _privateConstructorUsedError;
   int get selectedPayment => throw _privateConstructorUsedError;
+  int get availableSpot => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OrderStateCopyWith<OrderState> get copyWith =>
@@ -39,9 +40,11 @@ abstract class $OrderStateCopyWith<$Res> {
       ParkingPoint? selectedSpot,
       int selectedTime,
       String? referralCode,
-      int selectedPayment});
+      int selectedPayment,
+      int availableSpot});
 
   $LocationCopyWith<$Res>? get location;
+  $ParkingPointCopyWith<$Res>? get selectedSpot;
 }
 
 /// @nodoc
@@ -60,6 +63,7 @@ class _$OrderStateCopyWithImpl<$Res> implements $OrderStateCopyWith<$Res> {
     Object? selectedTime = freezed,
     Object? referralCode = freezed,
     Object? selectedPayment = freezed,
+    Object? availableSpot = freezed,
   }) {
     return _then(_value.copyWith(
       status: status == freezed
@@ -86,6 +90,10 @@ class _$OrderStateCopyWithImpl<$Res> implements $OrderStateCopyWith<$Res> {
           ? _value.selectedPayment
           : selectedPayment // ignore: cast_nullable_to_non_nullable
               as int,
+      availableSpot: availableSpot == freezed
+          ? _value.availableSpot
+          : availableSpot // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -97,6 +105,17 @@ class _$OrderStateCopyWithImpl<$Res> implements $OrderStateCopyWith<$Res> {
 
     return $LocationCopyWith<$Res>(_value.location!, (value) {
       return _then(_value.copyWith(location: value));
+    });
+  }
+
+  @override
+  $ParkingPointCopyWith<$Res>? get selectedSpot {
+    if (_value.selectedSpot == null) {
+      return null;
+    }
+
+    return $ParkingPointCopyWith<$Res>(_value.selectedSpot!, (value) {
+      return _then(_value.copyWith(selectedSpot: value));
     });
   }
 }
@@ -114,10 +133,13 @@ abstract class _$$_OrderStateCopyWith<$Res>
       ParkingPoint? selectedSpot,
       int selectedTime,
       String? referralCode,
-      int selectedPayment});
+      int selectedPayment,
+      int availableSpot});
 
   @override
   $LocationCopyWith<$Res>? get location;
+  @override
+  $ParkingPointCopyWith<$Res>? get selectedSpot;
 }
 
 /// @nodoc
@@ -138,6 +160,7 @@ class __$$_OrderStateCopyWithImpl<$Res> extends _$OrderStateCopyWithImpl<$Res>
     Object? selectedTime = freezed,
     Object? referralCode = freezed,
     Object? selectedPayment = freezed,
+    Object? availableSpot = freezed,
   }) {
     return _then(_$_OrderState(
       status: status == freezed
@@ -164,6 +187,10 @@ class __$$_OrderStateCopyWithImpl<$Res> extends _$OrderStateCopyWithImpl<$Res>
           ? _value.selectedPayment
           : selectedPayment // ignore: cast_nullable_to_non_nullable
               as int,
+      availableSpot: availableSpot == freezed
+          ? _value.availableSpot
+          : availableSpot // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -177,7 +204,8 @@ class _$_OrderState extends _OrderState {
       this.selectedSpot,
       required this.selectedTime,
       this.referralCode,
-      required this.selectedPayment})
+      required this.selectedPayment,
+      required this.availableSpot})
       : super._();
 
   @override
@@ -192,10 +220,12 @@ class _$_OrderState extends _OrderState {
   final String? referralCode;
   @override
   final int selectedPayment;
+  @override
+  final int availableSpot;
 
   @override
   String toString() {
-    return 'OrderState(status: $status, location: $location, selectedSpot: $selectedSpot, selectedTime: $selectedTime, referralCode: $referralCode, selectedPayment: $selectedPayment)';
+    return 'OrderState(status: $status, location: $location, selectedSpot: $selectedSpot, selectedTime: $selectedTime, referralCode: $referralCode, selectedPayment: $selectedPayment, availableSpot: $availableSpot)';
   }
 
   @override
@@ -212,7 +242,9 @@ class _$_OrderState extends _OrderState {
             const DeepCollectionEquality()
                 .equals(other.referralCode, referralCode) &&
             const DeepCollectionEquality()
-                .equals(other.selectedPayment, selectedPayment));
+                .equals(other.selectedPayment, selectedPayment) &&
+            const DeepCollectionEquality()
+                .equals(other.availableSpot, availableSpot));
   }
 
   @override
@@ -223,7 +255,8 @@ class _$_OrderState extends _OrderState {
       const DeepCollectionEquality().hash(selectedSpot),
       const DeepCollectionEquality().hash(selectedTime),
       const DeepCollectionEquality().hash(referralCode),
-      const DeepCollectionEquality().hash(selectedPayment));
+      const DeepCollectionEquality().hash(selectedPayment),
+      const DeepCollectionEquality().hash(availableSpot));
 
   @JsonKey(ignore: true)
   @override
@@ -238,7 +271,8 @@ abstract class _OrderState extends OrderState {
       final ParkingPoint? selectedSpot,
       required final int selectedTime,
       final String? referralCode,
-      required final int selectedPayment}) = _$_OrderState;
+      required final int selectedPayment,
+      required final int availableSpot}) = _$_OrderState;
   const _OrderState._() : super._();
 
   @override
@@ -253,6 +287,8 @@ abstract class _OrderState extends OrderState {
   String? get referralCode => throw _privateConstructorUsedError;
   @override
   int get selectedPayment => throw _privateConstructorUsedError;
+  @override
+  int get availableSpot => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrderStateCopyWith<_$_OrderState> get copyWith =>

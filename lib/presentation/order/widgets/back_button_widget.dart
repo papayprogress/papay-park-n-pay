@@ -17,7 +17,7 @@ class BackButtonWidget extends StatelessWidget {
           onPressed: () {
             context.router.pop();
           },
-          child: const Text("Kembali ke Menu Utama"),
+          child: const Text("Back to main menu"),
         ),
       ),
     );

@@ -55,46 +55,49 @@ class ParkingSpaceWidget extends StatelessWidget {
                 crossAxisSpacing: 12,
                 children: [
                   for (final parkingPoint in data.parkingPoint)
-                    if (parkingPoint.status)
-                      // Center(
-                      //   child: FaIcon(parkingPoint.vehicleType == 1
-                      //       ? FontAwesomeIcons.bus
-                      //       : FontAwesomeIcons.car),
-                      // )
-                      Center(
-                        child: Image.asset(
-                            'assets/cars/car-${parkingPoint.vehicleType}.png'),
-                      )
-                    else
-                      InkWell(
-                        onTap: () {
-                          context.read<OrderCubit>().selectSpot(parkingPoint);
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: selectedSpotId == parkingPoint.id!
-                                ? AppColor.lightPrimary
-                                : null,
-                            border: selectedSpotId == parkingPoint.id
-                                ? Border.all(
-                                    color: AppColor.primary,
-                                    width: 3,
-                                  )
-                                : null,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Center(
-                            child: Text(
-                              parkingPoint.name,
-                              style: TextStyle(
-                                color: selectedSpotId == parkingPoint.id
-                                    ? AppColor.white
+                    Builder(
+                      builder: (context) {
+                        if (parkingPoint.status) {
+                          return Center(
+                            child: Image.asset(
+                                'assets/cars/car-${parkingPoint.vehicleType}.png'),
+                          );
+                        } else {
+                          return InkWell(
+                            onTap: () {
+                              context
+                                  .read<OrderCubit>()
+                                  .selectSpot(parkingPoint);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: selectedSpotId == parkingPoint.id!
+                                    ? AppColor.lightPrimary
                                     : null,
+                                border: selectedSpotId == parkingPoint.id
+                                    ? Border.all(
+                                        color: AppColor.primary,
+                                        width: 3,
+                                      )
+                                    : null,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  parkingPoint.name,
+                                  style: TextStyle(
+                                    color: selectedSpotId == parkingPoint.id
+                                        ? AppColor.white
+                                        : null,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      ),
+                          );
+                        }
+                      },
+                    ),
                 ],
               );
             },

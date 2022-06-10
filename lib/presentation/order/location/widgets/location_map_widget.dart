@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:papay/domain/location/location.dart';
+
 class LocationMapWidget extends StatefulWidget {
-  const LocationMapWidget({Key? key}) : super(key: key);
+  const LocationMapWidget({Key? key, required this.locations})
+      : super(key: key);
+
+  final List<Location> locations;
 
   @override
   State<LocationMapWidget> createState() => _LocationMapWidgetState();
 }
 
-class _LocationMapWidgetState extends State<LocationMapWidget> {
+class _LocationMapWidgetState extends State<LocationMapWidget>
+    with OSMMixinObserver {
   late MapController mapController;
 
   @override
@@ -17,7 +23,8 @@ class _LocationMapWidgetState extends State<LocationMapWidget> {
     super.initState();
     mapController = MapController(
       initMapWithUserPosition: false,
-      initPosition: GeoPoint(latitude: -6.905977, longitude: 107.613144),
+      initPosition:
+          GeoPoint(latitude: -6.930466341357687, longitude: 107.71779233486427),
     );
   }
 
@@ -28,15 +35,32 @@ class _LocationMapWidgetState extends State<LocationMapWidget> {
   }
 
   @override
+  Future<void> mapIsReady(bool isReady) async {
+    await mapController.setZoom(zoomLevel: 8);
+    if (widget.locations.isNotEmpty) {
+      for (final location in widget.locations) {
+        await mapController.changeLocation(
+          GeoPoint(
+            latitude: location.lat,
+            longitude: location.lon,
+          ),
+        );
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         OSMFlutter(
           controller: mapController,
           trackMyPosition: false,
-          initZoom: 15,
-          minZoomLevel: 8,
-          maxZoomLevel: 1.0,
+          androidHotReloadSupport: true,
+          initZoom: 8,
+          minZoomLevel: 3,
+          maxZoomLevel: 18,
+          stepZoom: 1.0,
           userLocationMarker: UserLocationMaker(
             personMarker: const MarkerIcon(
               icon: Icon(
@@ -73,46 +97,38 @@ class _LocationMapWidgetState extends State<LocationMapWidget> {
           ),
         ),
         Align(
-          alignment: Alignment.bottomLeft,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: FloatingActionButton.extended(
-              onPressed: () {},
-              heroTag: 'vehicle-type',
-              label: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const FaIcon(FontAwesomeIcons.car),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        Align(
           alignment: Alignment.bottomRight,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: FloatingActionButton.extended(
-              onPressed: () {},
-              heroTag: 'map-action',
-              label: Row(
-                children: [
-                  IconButton(
-                    onPressed: () async {
-                      await mapController.zoomOut();
-                    },
-                    icon: const Icon(Icons.minimize),
-                  ),
-                  IconButton(
-                    onPressed: () async {
-                      await mapController.zoomIn();
-                    },
-                    icon: const Icon(Icons.add),
-                  ),
-                ],
-              ),
+            child: Column(
+              children: [
+                // Padding(
+                //   child: FloatingActionButton.extended(
+                //     onPressed: () {},
+                //     heroTag: 'vehicle-type',
+                //     label: Row(
+                //       children: [
+                //         IconButton(
+                //           onPressed: () {},
+                //           icon: const FaIcon(FontAwesomeIcons.car),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+                IconButton(
+                  onPressed: () async {
+                    await mapController.zoomOut();
+                  },
+                  icon: const FaIcon(FontAwesomeIcons.circleMinus),
+                ),
+                IconButton(
+                  onPressed: () async {
+                    await mapController.zoomIn();
+                  },
+                  icon: const FaIcon(FontAwesomeIcons.circlePlus),
+                ),
+              ],
             ),
           ),
         ),

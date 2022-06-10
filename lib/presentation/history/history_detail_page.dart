@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:papay/domain/history/history.dart';
 import 'package:papay/presentation/core/app_theme.dart';
 import 'package:papay/presentation/routes/app_router.dart';
@@ -16,17 +15,20 @@ class HistoryDetailPage extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            // Positioned(
-            //   bottom: -100,
-            //   right: -60,
-            //   child: Image.asset('assets/other/gear.png'),
-            // ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: Image.asset('assets/car-bg.png'),
+            ),
             ListView(
               padding: const EdgeInsets.all(30),
               children: [
                 Text(
-                  history.id!,
-                  style: const TextStyle(color: AppColor.lightPrimary),
+                  "#${history.id!}",
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 156, 203, 223),
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: 16),
                 ListTile(
@@ -35,40 +37,31 @@ class HistoryDetailPage extends StatelessWidget {
                     history.name,
                     style: AppFont.headline2,
                   ),
-                  subtitle: Text(
-                    history.address,
-                    style:
-                        AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
-                  ),
-                  trailing: const FaIcon(
-                    FontAwesomeIcons.car,
-                    size: 48,
-                  ),
                 ),
                 const Divider(),
                 const SizedBox(height: 16),
-                const Center(
-                  child: SizedBox(
-                    width: 200,
-                    height: 200,
-                    child: Placeholder(),
-                  ),
-                ),
-                const SizedBox(height: 32),
-                FractionallySizedBox(
-                  widthFactor: 1 / 2,
-                  child: OutlinedButton(
-                    onPressed: () {},
-                    child: const Text('Unduh Tiket'),
-                  ),
-                ),
+                // const Center(
+                //   child: SizedBox(
+                //     width: 200,
+                //     height: 200,
+                //     child: Placeholder(),
+                //   ),
+                // ),
+                // const SizedBox(height: 32),
+                // FractionallySizedBox(
+                //   widthFactor: 1 / 2,
+                //   child: OutlinedButton(
+                //     onPressed: () {},
+                //     child: const Text('Unduh Tiket'),
+                //   ),
+                // ),
+                Image.asset('assets/car-side.png'),
                 const SizedBox(height: 32),
                 Text(
-                  'Note: the QR code work as proof of booking to the parking lot owner if an error occurs',
-                  style: AppFont.subhead3.copyWith(
-                    color: AppColor.greyPrimary,
+                  'Details',
+                  style: AppFont.headline3.copyWith(
+                    color: AppColor.darkerBlack,
                   ),
-                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 32),
                 Table(
@@ -171,26 +164,31 @@ class HistoryDetailPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 32),
-                const Text(
-                  'Total COs:',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
                 Text(
-                  'Rp. ${history.paymentTotal}',
-                  style: const TextStyle(color: Colors.red),
-                ),
-                const SizedBox(height: 8),
-                if (history.paymentStatus)
-                  const Text(
-                    '(Sudah Dibayar ✔)',
-                    style: TextStyle(color: Colors.green),
-                  )
-                else
-                  const Text(
-                    '(Belum Dibayar ❌)',
-                    style: TextStyle(color: Colors.red),
+                  'Total Cost:',
+                  style: AppFont.headline3.copyWith(
+                    color: AppColor.darkerBlack,
                   ),
+                ),
+                const SizedBox(height: 16),
+                Text.rich(
+                  TextSpan(
+                    text: 'Rp.${history.paymentTotal}',
+                    style: AppFont.headline3,
+                    children: [
+                      if (history.paymentStatus)
+                        const TextSpan(
+                          text: ' (Sudah Dibayar ✔)',
+                          style: TextStyle(color: Colors.green),
+                        )
+                      else
+                        const TextSpan(
+                          text: ' (Belum Dibayar ❌)',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                    ],
+                  ),
+                ),
                 const SizedBox(height: 32),
                 FractionallySizedBox(
                   widthFactor: 1,

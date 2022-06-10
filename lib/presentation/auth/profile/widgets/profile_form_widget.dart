@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:papay/application/auth/user_profile_form/user_profile_form_bloc.dart';
 import 'package:papay/domain/auth/app_user.dart';
 import 'package:papay/presentation/core/app_theme.dart';
@@ -98,12 +99,18 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
             children: [
               ListTile(
                 contentPadding: EdgeInsets.zero,
+                leading: IconButton(
+                  onPressed: () {
+                    context.router.push(const SettingRoute());
+                  },
+                  icon: const FaIcon(FontAwesomeIcons.gear),
+                ),
                 title: const Text(
-                  "Profil",
+                  "Profile",
                   style: AppFont.headline2,
                 ),
                 subtitle: Text(
-                  "Ubah pengaturan dari profilmu",
+                  "Change yout profile",
                   style: AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
                 ),
                 trailing: CircleAvatar(
@@ -122,14 +129,14 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
               const CircleAvatar(radius: 50),
               const SizedBox(height: 30),
               const Text(
-                'Nama Lengkap',
+                'Fullname',
                 style: AppFont.formLabel,
               ),
               const SizedBox(height: 8),
               TextFormField(
                 controller: fullnameController,
                 decoration: const InputDecoration(
-                  hintText: 'Nama Lengkap',
+                  hintText: 'Fullname',
                 ),
                 textInputAction: TextInputAction.next,
                 onChanged: (value) {
@@ -154,14 +161,14 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
               ),
               const SizedBox(height: 16),
               const Text(
-                'No. HP',
+                'Phone Number',
                 style: AppFont.formLabel,
               ),
               const SizedBox(height: 8),
               TextFormField(
                 controller: phoneController,
                 decoration: const InputDecoration(
-                  hintText: 'No. HP',
+                  hintText: 'Input Phone Number',
                 ),
                 textInputAction: TextInputAction.next,
                 onChanged: (value) {
@@ -177,7 +184,7 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
                       .value
                       .fold(
                         (l) => l.maybeMap(
-                          empty: (_) => 'Invalid Phone',
+                          empty: (_) => 'Invalid Phone Number',
                           orElse: () => null,
                         ),
                         (r) => null,
@@ -193,7 +200,7 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
               TextFormField(
                 controller: emailController,
                 decoration: const InputDecoration(
-                  hintText: 'Email atau Username',
+                  hintText: 'Input Email',
                 ),
                 textInputAction: TextInputAction.next,
                 onChanged: (value) {
@@ -218,7 +225,7 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Kata Sandi Baru',
+                'New Password',
                 style: AppFont.formLabel,
               ),
               const SizedBox(height: 8),
@@ -226,7 +233,7 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
                 controller: passwordController,
                 obscureText: isObsecure,
                 decoration: InputDecoration(
-                  hintText: 'Kata Sandi Baru',
+                  hintText: 'New Password',
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -262,7 +269,7 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Konfirmasi Kata Sandi',
+                'Confirm Password',
                 style: AppFont.formLabel,
               ),
               const SizedBox(height: 8),
@@ -270,7 +277,7 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
                 controller: passwordConfirmController,
                 obscureText: isObsecure2,
                 decoration: InputDecoration(
-                  hintText: 'Konfirmasi Kata Sandi Baru',
+                  hintText: 'Confirm new pasword',
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -312,23 +319,13 @@ class _ProfileFormWidgetState extends State<ProfileFormWidget> {
                         .read<UserProfileFormBloc>()
                         .add(const UserProfileFormEvent.updateProfilePressed());
                   },
-                  child: const Text('Ubah Profil'),
+                  child: const Text('Change Profile'),
                 ),
               ),
               if (state.isSubmitting) ...[
                 const SizedBox(height: 8),
                 const LinearProgressIndicator(),
               ],
-              const SizedBox(height: 16),
-              FractionallySizedBox(
-                widthFactor: 1,
-                child: OutlinedButton(
-                  onPressed: () {
-                    context.router.push(const SettingRoute());
-                  },
-                  child: const Text('Pengaturan'),
-                ),
-              ),
             ],
           ),
         );

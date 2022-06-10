@@ -18,11 +18,11 @@ class ProfilePage extends StatelessWidget {
         body: SafeArea(
           child: Stack(
             children: [
-              // Positioned(
-              //   bottom: -100,
-              //   right: -60,
-              //   child: Image.asset('assets/other/gear.png'),
-              // ),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Image.asset('assets/car-bg.png'),
+              ),
               BlocBuilder<UserProfileBloc, UserProfileState>(
                 builder: (context, state) {
                   return state.map(

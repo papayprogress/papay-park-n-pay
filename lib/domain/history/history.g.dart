@@ -16,7 +16,7 @@ _$_History _$$_HistoryFromJson(Map<String, dynamic> json) => _$_History(
       startedAt: json['started_at'] as String,
       finishedAt: json['finished_at'] as String,
       paymentStatus: json['payment_status'] as bool,
-      paymentTotal: json['payment_total'] as String,
+      paymentTotal: json['payment_total'] as int,
       vehicleType: json['vehicle_type'] as int,
       parkingPointName: json['parking_point_name'] as String,
     );

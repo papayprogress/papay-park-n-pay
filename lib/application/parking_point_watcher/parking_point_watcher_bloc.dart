@@ -42,4 +42,10 @@ class ParkingPointWatcherBloc
       );
     });
   }
+
+  @override
+  Future<void> close() async {
+    await _parkingPointStreamSubscription?.cancel();
+    return super.close();
+  }
 }

@@ -26,14 +26,17 @@ class SplashPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Stack(
-              children: const [
-                // Align(
-                //   alignment: Alignment.center,
-                //   child: Image.asset('assets/logo/logo.png'),
-                // ),
+              children: [
                 Align(
+                  alignment: Alignment.center,
+                  child: Image.asset('assets/logo.png'),
+                ),
+                const Align(
                   alignment: Alignment.bottomCenter,
-                  child: Text("(Versi Aplikasi)"),
+                  child: Text(
+                    "(1.0.0)",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:papay/application/history_watcher/history_watcher_bloc.dart';
 import 'package:papay/injection.dart';
 import 'package:papay/presentation/core/app_theme.dart';
@@ -19,11 +18,11 @@ class HistoryPage extends StatelessWidget {
         body: SafeArea(
           child: Stack(
             children: [
-              // Positioned(
-              //   bottom: -100,
-              //   right: -60,
-              //   child: Image.asset('assets/other/gear.png'),
-              // ),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Image.asset('assets/car-bg.png'),
+              ),
               ListView(
                 padding: const EdgeInsets.all(30),
                 children: [
@@ -82,22 +81,11 @@ class HistoryPage extends StatelessWidget {
                                           .push(HistoryDetailRoute(history: e));
                                     },
                                     leading: CircleAvatar(
-                                      backgroundColor: e.paymentStatus
-                                          ? Colors.red
-                                          : Colors.green,
-                                      child: FaIcon(
-                                        e.paymentStatus
-                                            ? Icons.error
-                                            : FontAwesomeIcons.check,
-                                      ),
+                                      child: Text(e.name.split('')[0]),
                                     ),
                                     title: Text(e.name),
-                                    subtitle: Text(
-                                        '${e.date} | ${e.startedAt}-${e.finishedAt}'),
-                                    trailing: Text(
-                                      'Rp. ${e.paymentTotal}',
-                                      style: const TextStyle(color: Colors.red),
-                                    ),
+                                    subtitle: Text(e.date),
+                                    trailing: Text('Rp. ${e.paymentTotal}'),
                                   ),
                                 )
                                 .toList(),

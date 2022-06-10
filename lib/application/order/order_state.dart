@@ -17,7 +17,7 @@ class OrderState with _$OrderState {
   factory OrderState.initial() => const OrderState(
         status: Status.isChoosing,
         selectedTime: -1,
-        selectedPayment: -1,
+        selectedPayment: 0,
         availableSpot: 0,
       );
 

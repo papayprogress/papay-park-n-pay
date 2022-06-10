@@ -32,7 +32,6 @@ class HelloBlockWidget extends StatelessWidget {
           },
           loadSuccess: (e) {
             return ListTile(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 30),
               title: Text(
                 'Halo, ${(e.user.name ?? e.user.email).split(" ")[0]}',
                 style: AppFont.headline2,

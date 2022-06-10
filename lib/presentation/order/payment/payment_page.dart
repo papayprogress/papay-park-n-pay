@@ -13,40 +13,57 @@ class PaymentPage extends StatelessWidget {
     AutoRouter.of(context);
     return Scaffold(
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(30),
+        child: Stack(
           children: [
-            BlocBuilder<OrderCubit, OrderState>(
-              buildWhen: (p, c) => p.location != c.location,
-              builder: (context, state) {
-                return LocationHeaderWidget(
-                  hasPadding: false,
-                  name: state.location!.name,
-                  address: state.location!.address,
-                );
-              },
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: Image.asset('assets/car-bg.png'),
             ),
-            const Divider(),
-            const PaymentFormWidget(),
-            const SizedBox(height: 32),
-            FractionallySizedBox(
-              widthFactor: 1,
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<OrderCubit>().changePage(Status.isSuccess);
-                },
-                child: const Text("Book For Rp. 6500"),
-              ),
-            ),
-            const SizedBox(height: 32),
-            FractionallySizedBox(
-              widthFactor: 1,
-              child: OutlinedButton(
-                onPressed: () {
-                  context.read<OrderCubit>().changePage(Status.isChoosing);
-                },
-                child: const Text("Kembali"),
-              ),
+            ListView(
+              padding: const EdgeInsets.all(30),
+              children: [
+                BlocBuilder<OrderCubit, OrderState>(
+                  buildWhen: (p, c) => p.location != c.location,
+                  builder: (context, state) {
+                    return LocationHeaderWidget(
+                      hasPadding: false,
+                      name: state.location!.name,
+                      address: state.location!.address,
+                    );
+                  },
+                ),
+                const Divider(),
+                const PaymentFormWidget(),
+                const SizedBox(height: 32),
+                BlocBuilder<OrderCubit, OrderState>(
+                  // buildWhen: (p, c) => p.selectedTime != p.selectedTime,
+                  builder: (context, state) {
+                    return FractionallySizedBox(
+                      widthFactor: 1,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          context
+                              .read<OrderCubit>()
+                              .changePage(Status.isSuccess);
+                        },
+                        child: Text(
+                            "Book For ${state.selectedTime * state.location!.ratePerHour}"),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 32),
+                FractionallySizedBox(
+                  widthFactor: 1,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      context.read<OrderCubit>().changePage(Status.isChoosing);
+                    },
+                    child: const Text("Kembali"),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

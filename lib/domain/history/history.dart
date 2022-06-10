@@ -17,7 +17,7 @@ class History with _$History {
     @JsonKey(name: 'started_at') required final String startedAt,
     @JsonKey(name: 'finished_at') required final String finishedAt,
     @JsonKey(name: 'payment_status') required final bool paymentStatus,
-    @JsonKey(name: 'payment_total') required final String paymentTotal,
+    @JsonKey(name: 'payment_total') required final int paymentTotal,
     @JsonKey(name: 'vehicle_type') required final int vehicleType,
     @JsonKey(name: 'parking_point_name') required final String parkingPointName,
   }) = _History;

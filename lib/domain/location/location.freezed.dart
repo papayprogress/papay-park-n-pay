@@ -27,15 +27,15 @@ mixin _$Location {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
   @JsonKey(name: 'lat')
-  String get lat => throw _privateConstructorUsedError;
+  double get lat => throw _privateConstructorUsedError;
   @JsonKey(name: 'lon')
-  String get lon => throw _privateConstructorUsedError;
+  double get lon => throw _privateConstructorUsedError;
   @JsonKey(name: 'open_hour')
   String get openHour => throw _privateConstructorUsedError;
   @JsonKey(name: 'close_hour')
   String get closeHour => throw _privateConstructorUsedError;
   @JsonKey(name: 'rate_per_hour')
-  String get ratePerHour => throw _privateConstructorUsedError;
+  int get ratePerHour => throw _privateConstructorUsedError;
   @JsonKey(name: 'size_per_spot')
   String get sizePerSpot => throw _privateConstructorUsedError;
 
@@ -53,11 +53,11 @@ abstract class $LocationCopyWith<$Res> {
       {@JsonKey(ignore: true) String? id,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'address') String address,
-      @JsonKey(name: 'lat') String lat,
-      @JsonKey(name: 'lon') String lon,
+      @JsonKey(name: 'lat') double lat,
+      @JsonKey(name: 'lon') double lon,
       @JsonKey(name: 'open_hour') String openHour,
       @JsonKey(name: 'close_hour') String closeHour,
-      @JsonKey(name: 'rate_per_hour') String ratePerHour,
+      @JsonKey(name: 'rate_per_hour') int ratePerHour,
       @JsonKey(name: 'size_per_spot') String sizePerSpot});
 }
 
@@ -97,11 +97,11 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
       lat: lat == freezed
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       lon: lon == freezed
           ? _value.lon
           : lon // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       openHour: openHour == freezed
           ? _value.openHour
           : openHour // ignore: cast_nullable_to_non_nullable
@@ -113,7 +113,7 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
       ratePerHour: ratePerHour == freezed
           ? _value.ratePerHour
           : ratePerHour // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       sizePerSpot: sizePerSpot == freezed
           ? _value.sizePerSpot
           : sizePerSpot // ignore: cast_nullable_to_non_nullable
@@ -132,11 +132,11 @@ abstract class _$$_LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
       {@JsonKey(ignore: true) String? id,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'address') String address,
-      @JsonKey(name: 'lat') String lat,
-      @JsonKey(name: 'lon') String lon,
+      @JsonKey(name: 'lat') double lat,
+      @JsonKey(name: 'lon') double lon,
       @JsonKey(name: 'open_hour') String openHour,
       @JsonKey(name: 'close_hour') String closeHour,
-      @JsonKey(name: 'rate_per_hour') String ratePerHour,
+      @JsonKey(name: 'rate_per_hour') int ratePerHour,
       @JsonKey(name: 'size_per_spot') String sizePerSpot});
 }
 
@@ -178,11 +178,11 @@ class __$$_LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
       lat: lat == freezed
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       lon: lon == freezed
           ? _value.lon
           : lon // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       openHour: openHour == freezed
           ? _value.openHour
           : openHour // ignore: cast_nullable_to_non_nullable
@@ -194,7 +194,7 @@ class __$$_LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
       ratePerHour: ratePerHour == freezed
           ? _value.ratePerHour
           : ratePerHour // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       sizePerSpot: sizePerSpot == freezed
           ? _value.sizePerSpot
           : sizePerSpot // ignore: cast_nullable_to_non_nullable
@@ -232,10 +232,10 @@ class _$_Location extends _Location {
   final String address;
   @override
   @JsonKey(name: 'lat')
-  final String lat;
+  final double lat;
   @override
   @JsonKey(name: 'lon')
-  final String lon;
+  final double lon;
   @override
   @JsonKey(name: 'open_hour')
   final String openHour;
@@ -244,7 +244,7 @@ class _$_Location extends _Location {
   final String closeHour;
   @override
   @JsonKey(name: 'rate_per_hour')
-  final String ratePerHour;
+  final int ratePerHour;
   @override
   @JsonKey(name: 'size_per_spot')
   final String sizePerSpot;
@@ -302,11 +302,11 @@ abstract class _Location extends Location {
           {@JsonKey(ignore: true) final String? id,
           @JsonKey(name: 'name') required final String name,
           @JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'lat') required final String lat,
-          @JsonKey(name: 'lon') required final String lon,
+          @JsonKey(name: 'lat') required final double lat,
+          @JsonKey(name: 'lon') required final double lon,
           @JsonKey(name: 'open_hour') required final String openHour,
           @JsonKey(name: 'close_hour') required final String closeHour,
-          @JsonKey(name: 'rate_per_hour') required final String ratePerHour,
+          @JsonKey(name: 'rate_per_hour') required final int ratePerHour,
           @JsonKey(name: 'size_per_spot') required final String sizePerSpot}) =
       _$_Location;
   const _Location._() : super._();
@@ -324,10 +324,10 @@ abstract class _Location extends Location {
   String get address => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'lat')
-  String get lat => throw _privateConstructorUsedError;
+  double get lat => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'lon')
-  String get lon => throw _privateConstructorUsedError;
+  double get lon => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'open_hour')
   String get openHour => throw _privateConstructorUsedError;
@@ -336,7 +336,7 @@ abstract class _Location extends Location {
   String get closeHour => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'rate_per_hour')
-  String get ratePerHour => throw _privateConstructorUsedError;
+  int get ratePerHour => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'size_per_spot')
   String get sizePerSpot => throw _privateConstructorUsedError;

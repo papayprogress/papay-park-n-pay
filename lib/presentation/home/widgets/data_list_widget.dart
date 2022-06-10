@@ -10,28 +10,25 @@ class DataListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text('Parking History'),
-              InkWell(
-                onTap: () {
-                  context.read<MainLayoutCubit>().changePage(3);
-                },
-                child: const Text('Lihat Semua'),
-              ),
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Parking History'),
+            InkWell(
+              onTap: () {
+                context.read<MainLayoutCubit>().changePage(3);
+              },
+              child: const Text('Lihat Semua'),
+            ),
+          ],
         ),
         for (int i = 0; i < 3; i++)
           ListTile(
             onTap: () {},
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 30,
-              vertical: 8,
-            ),
+            // contentPadding: const EdgeInsets.symmetric(
+            //   horizontal: 30,
+            //   vertical: 8,
+            // ),
             leading: const CircleAvatar(
               backgroundColor: AppColor.primary,
               child: Text(

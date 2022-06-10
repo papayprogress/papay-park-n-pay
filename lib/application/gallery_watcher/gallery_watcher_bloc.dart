@@ -41,4 +41,10 @@ class GalleryWatcherBloc
       );
     });
   }
+
+  @override
+  Future<void> close() async {
+    await _galleryStreamSubscription?.cancel();
+    return super.close();
+  }
 }

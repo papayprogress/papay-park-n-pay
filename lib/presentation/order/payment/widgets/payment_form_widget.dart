@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:papay/application/order/order_cubit.dart';
 
 class PaymentFormWidget extends StatelessWidget {
@@ -35,17 +36,14 @@ class PaymentFormWidget extends StatelessWidget {
                         onPressed: () {
                           context.read<OrderCubit>().minTime();
                         },
-                        icon: const Icon(Icons.minimize),
+                        icon: const FaIcon(FontAwesomeIcons.circleMinus),
                       ),
                       Text('${state.selectedTime} Hour'),
                       IconButton(
                         onPressed: () {
                           context.read<OrderCubit>().plusTime();
-                          // setState(() {
-                          //   selectedTime++;
-                          // });
                         },
-                        icon: const Icon(Icons.add),
+                        icon: const FaIcon(FontAwesomeIcons.circlePlus),
                       ),
                     ],
                   ),
@@ -69,6 +67,7 @@ class PaymentFormWidget extends StatelessWidget {
                   child: TextFormField(
                     decoration: const InputDecoration(
                       hintText: 'Input Code',
+                      suffixIcon: Icon(Icons.check_circle, color: Colors.green),
                     ),
                     autocorrect: false,
                     keyboardType: TextInputType.text,

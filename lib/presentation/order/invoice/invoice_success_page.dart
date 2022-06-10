@@ -12,11 +12,11 @@ class InvoiceSuccessPage extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            // Positioned(
-            //   bottom: -100,
-            //   right: -60,
-            //   child: Image.asset('assets/other/gear.png'),
-            // ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: Image.asset('assets/car-bg.png'),
+            ),
             Container(
               padding: const EdgeInsets.all(30),
               child: Column(
@@ -44,10 +44,8 @@ class InvoiceSuccessPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const SizedBox(
-                    width: 200,
-                    height: 200,
-                    child: Placeholder(),
+                  Center(
+                    child: Image.asset('assets/qr.png'),
                   ),
                   const SizedBox(height: 32),
                   OutlinedButton(

@@ -25,7 +25,7 @@ class LocationWidget extends StatelessWidget {
                   const Text('Nearest From You'),
                   InkWell(
                     onTap: () {},
-                    child: const Text('Lihat Semua'),
+                    child: const Text('See All'),
                   ),
                 ],
               ),

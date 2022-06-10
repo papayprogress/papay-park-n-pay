@@ -19,29 +19,38 @@ class LocationDetailPage extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: SafeArea(
-            child: ListView(
+            child: Stack(
               children: [
-                LocationHeaderWidget(
-                  name: state.location!.name,
-                  address: state.location!.address,
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Image.asset('assets/car-bg.png'),
                 ),
-                LocationBannerWidget(
-                  idLocation: state.location!.id!,
+                ListView(
+                  children: [
+                    LocationHeaderWidget(
+                      name: state.location!.name,
+                      address: state.location!.address,
+                    ),
+                    LocationBannerWidget(
+                      idLocation: state.location!.id!,
+                    ),
+                    LocationInfoWidget(
+                      available: state.availableSpot,
+                      rate: state.location!.ratePerHour.toString(),
+                      size: state.location!.sizePerSpot,
+                    ),
+                    ParkingSpaceWidget(
+                      locationId: state.location!.id!,
+                      selectedSpotId: state.selectedSpot?.id,
+                    ),
+                    ChooseSpotButtonWidget(
+                      canOrder: state.canOrder,
+                      selectedName: state.selectedSpot?.name,
+                    ),
+                    const BackButtonWidget(),
+                  ],
                 ),
-                LocationInfoWidget(
-                  available: state.availableSpot,
-                  rate: state.location!.ratePerHour,
-                  size: state.location!.sizePerSpot,
-                ),
-                ParkingSpaceWidget(
-                  locationId: state.location!.id!,
-                  selectedSpotId: state.selectedSpot?.id,
-                ),
-                ChooseSpotButtonWidget(
-                  canOrder: state.canOrder,
-                  selectedName: state.selectedSpot?.name,
-                ),
-                const BackButtonWidget(),
               ],
             ),
           ),

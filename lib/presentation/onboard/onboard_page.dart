@@ -6,22 +6,22 @@ import 'package:papay/presentation/routes/app_router.dart';
 
 final List<OnboardClass> onboardMenu = [
   OnboardClass(
-    title: 'Anti Ribet',
+    title: 'Just Few Clicks',
     description:
-        'Mulai hari ini, kamu bisa hemat waktu untuk lama-lama mengantri hanya lewat satu klik!',
-    image: 'assets/illustrations/board-1.png',
+        'No need to worry about parking wherever you go, cozy and easily accessible parking spaces are available in PAPAY',
+    image: 'assets/onboard/1.png',
   ),
   OnboardClass(
-    title: 'Real-Time',
+    title: 'Save Your Time',
     description:
-        'Sering bingung berapa lama lagi proses reparasi selesai? Tenang, notifikasi real-time jadi solusimu!',
-    image: 'assets/illustrations/board-2.png',
+        "With PAPAY, you don't have to waste time wandering around looking for an empty parking space in the middle of a busy city!",
+    image: 'assets/onboard/2.png',
   ),
   OnboardClass(
-    title: 'Cepat & Efektif',
+    title: 'Real-Time IoT Solution',
     description:
-        'Sudah siap untuk mendapatkan pengalaman reparasi yang cepat dan efektif? Yuk klik tombol di bawah!',
-    image: 'assets/illustrations/board-3.png',
+        "No need to worry if your parking spot is occupied by someone else, a real-time IoT sensor system will be your best solution!",
+    image: 'assets/onboard/3.png',
   ),
 ];
 

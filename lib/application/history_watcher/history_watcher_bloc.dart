@@ -41,4 +41,10 @@ class HistoryWatcherBloc
       );
     });
   }
+
+  @override
+  Future<void> close() async {
+    await _historyStreamSubscription?.cancel();
+    return super.close();
+  }
 }

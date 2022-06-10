@@ -1,21 +1,34 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_swiper_plus/flutter_swiper_plus.dart';
 import 'package:papay/application/gallery_watcher/gallery_watcher_bloc.dart';
 import 'package:papay/injection.dart';
 import 'package:papay/presentation/core/app_theme.dart';
 
-class LocationBannerWidget extends StatelessWidget {
+class LocationBannerWidget extends StatefulWidget {
   const LocationBannerWidget({Key? key, required this.idLocation})
       : super(key: key);
 
   final String idLocation;
 
   @override
+  State<LocationBannerWidget> createState() => _LocationBannerWidgetState();
+}
+
+class _LocationBannerWidgetState extends State<LocationBannerWidget> {
+  late CarouselController carouselController;
+
+  @override
+  void initState() {
+    super.initState();
+    carouselController = CarouselController();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<GalleryWatcherBloc>()
-        ..add(GalleryWatcherEvent.watchAllStarted(idLocation)),
+        ..add(GalleryWatcherEvent.watchAllStarted(widget.idLocation)),
       child: BlocBuilder<GalleryWatcherBloc, GalleryWatcherState>(
         builder: (context, state) {
           return state.map(
@@ -43,43 +56,65 @@ class LocationBannerWidget extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 3,
                 color: AppColor.darkerBlack,
-                child: Swiper(
-                  itemBuilder: (BuildContext context, int index) {
-                    return Image.network(
-                      data.galleries[index].imageUrl,
-                      fit: BoxFit.cover,
-                    );
-                  },
-                  itemCount: data.galleries.length,
-                  pagination: const SwiperPagination(),
-                  control: const SwiperControl(),
+                child: Stack(
+                  children: [
+                    CarouselSlider.builder(
+                      carouselController: carouselController,
+                      options: CarouselOptions(
+                        height: double.infinity,
+                        enableInfiniteScroll: true,
+                      ),
+                      itemCount: data.galleries.length,
+                      itemBuilder: (context, itemIndex, pageViewIndex) {
+                        return SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          child: Image.network(
+                            data.galleries[itemIndex].imageUrl,
+                            fit: BoxFit.cover,
+                          ),
+                        );
+                      },
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: IconButton(
+                          onPressed: () {
+                            carouselController.previousPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.linear,
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.arrow_circle_left_outlined,
+                            size: 48,
+                            color: AppColor.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: IconButton(
+                          onPressed: () {
+                            carouselController.nextPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.linear,
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.arrow_circle_right_outlined,
+                            size: 48,
+                            color: AppColor.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                // child: Stack(
-                //   children: [
-                //     Align(
-                //       alignment: Alignment.centerLeft,
-                //       child: IconButton(
-                //         onPressed: () {},
-                //         icon: const Icon(
-                //           Icons.arrow_circle_left_outlined,
-                //           size: 48,
-                //           color: AppColor.white,
-                //         ),
-                //       ),
-                //     ),
-                //     Align(
-                //       alignment: Alignment.centerRight,
-                //       child: IconButton(
-                //         onPressed: () {},
-                //         icon: const Icon(
-                //           Icons.arrow_circle_right_outlined,
-                //           size: 48,
-                //           color: AppColor.white,
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
               );
             },
             loadFailure: (e) {

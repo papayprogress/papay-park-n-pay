@@ -14,22 +14,22 @@ class SettingPage extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            // Positioned(
-            //   bottom: -100,
-            //   right: -60,
-            //   child: Image.asset('assets/other/gear.png'),
-            // ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: Image.asset('assets/car-bg.png'),
+            ),
             ListView(
               padding: const EdgeInsets.all(30),
               children: [
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: const Text(
-                    "Pengaturan",
+                    "Setting",
                     style: AppFont.headline2,
                   ),
                   subtitle: Text(
-                    "Ubah pengaturan aplikasimu",
+                    "Change settings for your apps",
                     style:
                         AppFont.subhead3.copyWith(color: AppColor.greyPrimary),
                   ),
@@ -55,16 +55,16 @@ class SettingPage extends StatelessWidget {
                     Icons.arrow_back,
                     color: AppColor.primary,
                   ),
-                  title: const Text("Kembali ke Menu Utama"),
+                  title: const Text("Back to main menu"),
                 ),
                 ListTile(
                   onTap: () {},
                   contentPadding: const EdgeInsets.symmetric(vertical: 8),
                   leading: const Icon(
-                    Icons.account_circle,
+                    Icons.lock,
                     color: AppColor.primary,
                   ),
-                  title: const Text("Ketentuan Privasi Pengguna"),
+                  title: const Text("Privacy & Policy"),
                 ),
                 ListTile(
                   onTap: () {
@@ -76,7 +76,7 @@ class SettingPage extends StatelessWidget {
                     color: Colors.red,
                   ),
                   title: const Text(
-                    "Keluar",
+                    "Logout",
                     style: TextStyle(color: Colors.red),
                   ),
                 ),

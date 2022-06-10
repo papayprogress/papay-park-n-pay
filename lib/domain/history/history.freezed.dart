@@ -41,7 +41,7 @@ mixin _$History {
   @JsonKey(name: 'payment_status')
   bool get paymentStatus => throw _privateConstructorUsedError;
   @JsonKey(name: 'payment_total')
-  String get paymentTotal => throw _privateConstructorUsedError;
+  int get paymentTotal => throw _privateConstructorUsedError;
   @JsonKey(name: 'vehicle_type')
   int get vehicleType => throw _privateConstructorUsedError;
   @JsonKey(name: 'parking_point_name')
@@ -67,7 +67,7 @@ abstract class $HistoryCopyWith<$Res> {
       @JsonKey(name: 'started_at') String startedAt,
       @JsonKey(name: 'finished_at') String finishedAt,
       @JsonKey(name: 'payment_status') bool paymentStatus,
-      @JsonKey(name: 'payment_total') String paymentTotal,
+      @JsonKey(name: 'payment_total') int paymentTotal,
       @JsonKey(name: 'vehicle_type') int vehicleType,
       @JsonKey(name: 'parking_point_name') String parkingPointName});
 }
@@ -140,7 +140,7 @@ class _$HistoryCopyWithImpl<$Res> implements $HistoryCopyWith<$Res> {
       paymentTotal: paymentTotal == freezed
           ? _value.paymentTotal
           : paymentTotal // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       vehicleType: vehicleType == freezed
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
@@ -170,7 +170,7 @@ abstract class _$$_HistoryCopyWith<$Res> implements $HistoryCopyWith<$Res> {
       @JsonKey(name: 'started_at') String startedAt,
       @JsonKey(name: 'finished_at') String finishedAt,
       @JsonKey(name: 'payment_status') bool paymentStatus,
-      @JsonKey(name: 'payment_total') String paymentTotal,
+      @JsonKey(name: 'payment_total') int paymentTotal,
       @JsonKey(name: 'vehicle_type') int vehicleType,
       @JsonKey(name: 'parking_point_name') String parkingPointName});
 }
@@ -244,7 +244,7 @@ class __$$_HistoryCopyWithImpl<$Res> extends _$HistoryCopyWithImpl<$Res>
       paymentTotal: paymentTotal == freezed
           ? _value.paymentTotal
           : paymentTotal // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       vehicleType: vehicleType == freezed
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
@@ -311,7 +311,7 @@ class _$_History extends _History {
   final bool paymentStatus;
   @override
   @JsonKey(name: 'payment_total')
-  final String paymentTotal;
+  final int paymentTotal;
   @override
   @JsonKey(name: 'vehicle_type')
   final int vehicleType;
@@ -402,7 +402,7 @@ abstract class _History extends History {
       @JsonKey(name: 'payment_status')
           required final bool paymentStatus,
       @JsonKey(name: 'payment_total')
-          required final String paymentTotal,
+          required final int paymentTotal,
       @JsonKey(name: 'vehicle_type')
           required final int vehicleType,
       @JsonKey(name: 'parking_point_name')
@@ -443,7 +443,7 @@ abstract class _History extends History {
   bool get paymentStatus => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'payment_total')
-  String get paymentTotal => throw _privateConstructorUsedError;
+  int get paymentTotal => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'vehicle_type')
   int get vehicleType => throw _privateConstructorUsedError;

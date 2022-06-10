@@ -15,9 +15,8 @@ class RegisterSuccessPage extends StatelessWidget {
               const Text('Pendaftaran Berhasil'),
               const Text('Cek emailmu untuk aktivasi akun'),
               const SizedBox(height: 8),
-              const Placeholder(
-                fallbackWidth: 300,
-                fallbackHeight: 300,
+              Center(
+                child: Image.asset('assets/registration_success.png'),
               ),
               const SizedBox(height: 8),
               FractionallySizedBox(

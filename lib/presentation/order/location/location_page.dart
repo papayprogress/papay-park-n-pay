@@ -16,26 +16,32 @@ class LocationPage extends StatelessWidget {
         ..add(const LocationWatcherEvent.watchAllStarted()),
       child: Scaffold(
         body: SafeArea(
-          // child: NestedScrollView(
-          //   headerSliverBuilder: (context, innerBoxIsScrolled) {
-          //     return [
-          //       SliverAppBar(
-          //         pinned: false,
-          //         expandedHeight: MediaQuery.of(context).size.height / 2,
-          //         flexibleSpace: const Flexible(
-          //           child: LocationMapWidget(),
-          //         ),
-          //       ),
-          //     ];
-          //   },
-          //   body: const LocationWidget(),
-          //   // body: const NearestDataListWidget(),
-          // ),
           child: SlidingUpPanel(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(16),
+              topRight: Radius.circular(16),
+            ),
             panel: const Center(
               child: LocationWidget(),
             ),
-            body: const LocationMapWidget(),
+            body: BlocBuilder<LocationWatcherBloc, LocationWatcherState>(
+              builder: (context, state) {
+                return state.map(
+                  initial: (e) {
+                    return Container();
+                  },
+                  loadInProgress: (e) {
+                    return Container();
+                  },
+                  loadSuccess: (e) {
+                    return LocationMapWidget(locations: e.location);
+                  },
+                  loadFailure: (e) {
+                    return Container();
+                  },
+                );
+              },
+            ),
           ),
         ),
       ),

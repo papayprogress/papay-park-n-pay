@@ -19,13 +19,8 @@ class _CTABlockWidgetState extends State<CTABlockWidget> {
     super.initState();
     mapController = MapController(
       initMapWithUserPosition: false,
-      initPosition: GeoPoint(latitude: 47.4358055, longitude: 8.4737324),
-      areaLimit: BoundingBox(
-        east: 10.4922941,
-        north: 47.8084648,
-        south: 45.817995,
-        west: 5.9559113,
-      ),
+      initPosition:
+          GeoPoint(latitude: -6.930466341357687, longitude: 107.71779233486427),
     );
   }
 
@@ -39,6 +34,8 @@ class _CTABlockWidgetState extends State<CTABlockWidget> {
   Widget build(BuildContext context) {
     return Material(
       color: AppColor.black,
+      borderRadius: BorderRadius.circular(16),
+      clipBehavior: Clip.antiAlias,
       // child: Stack(
       //   children: [
       //     const Positioned(
@@ -95,9 +92,11 @@ class _CTABlockWidgetState extends State<CTABlockWidget> {
         child: OSMFlutter(
           controller: mapController,
           trackMyPosition: false,
-          initZoom: 12,
-          minZoomLevel: 8,
-          maxZoomLevel: 1.0,
+          androidHotReloadSupport: true,
+          initZoom: 8,
+          minZoomLevel: 3,
+          maxZoomLevel: 18,
+          stepZoom: 1.0,
           userLocationMarker: UserLocationMaker(
             personMarker: const MarkerIcon(
               icon: Icon(

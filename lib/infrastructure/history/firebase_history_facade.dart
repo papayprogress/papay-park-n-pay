@@ -28,10 +28,8 @@ class FirebaseHistoryRepository implements IHistoryFacade {
         .onErrorReturnWith((error, _) {
       if (error is FirebaseException &&
           error.message!.contains('PERMISSION_DENIED')) {
-        print(error);
         return left(const HistoryFailure.inSufficientPermission());
       } else {
-        print(error);
         return left(const HistoryFailure.unexpected());
       }
     });

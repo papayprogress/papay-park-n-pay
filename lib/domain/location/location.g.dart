@@ -9,11 +9,11 @@ part of 'location.dart';
 _$_Location _$$_LocationFromJson(Map<String, dynamic> json) => _$_Location(
       name: json['name'] as String,
       address: json['address'] as String,
-      lat: json['lat'] as String,
-      lon: json['lon'] as String,
+      lat: (json['lat'] as num).toDouble(),
+      lon: (json['lon'] as num).toDouble(),
       openHour: json['open_hour'] as String,
       closeHour: json['close_hour'] as String,
-      ratePerHour: json['rate_per_hour'] as String,
+      ratePerHour: json['rate_per_hour'] as int,
       sizePerSpot: json['size_per_spot'] as String,
     );
 

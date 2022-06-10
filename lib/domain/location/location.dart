@@ -10,11 +10,11 @@ class Location with _$Location {
     @JsonKey(ignore: true) final String? id,
     @JsonKey(name: 'name') required final String name,
     @JsonKey(name: 'address') required final String address,
-    @JsonKey(name: 'lat') required final String lat,
-    @JsonKey(name: 'lon') required final String lon,
+    @JsonKey(name: 'lat') required final double lat,
+    @JsonKey(name: 'lon') required final double lon,
     @JsonKey(name: 'open_hour') required final String openHour,
     @JsonKey(name: 'close_hour') required final String closeHour,
-    @JsonKey(name: 'rate_per_hour') required final String ratePerHour,
+    @JsonKey(name: 'rate_per_hour') required final int ratePerHour,
     @JsonKey(name: 'size_per_spot') required final String sizePerSpot,
   }) = _Location;
 

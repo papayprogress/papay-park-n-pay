@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             //   child: Image.asset('assets/other/gear.png'),
             // ),
             ListView(
-              padding: const EdgeInsets.symmetric(vertical: 30),
+              padding: const EdgeInsets.all(30),
               children: const [
                 HelloBlockWidget(),
                 SizedBox(height: 30),
